@@ -1,0 +1,75 @@
+<head>
+    <link rel="stylesheet" href="accueil.component.css">
+</head>
+
+<header></header>
+
+<body>
+
+    <div class="divGlobal">
+        <!--Div de recherche-->
+        <div class="divGauche">
+
+            <div id="recherche">
+                <label for="site-search">Rechercher tâche : </label>
+                <input type="search" id="site-search" name="q" />
+
+                <button>Search</button>
+            </div>
+
+            <div id="divTrie">
+                <label for="trie-select">Trier par : </label>
+
+                <select name="trie" id="trie-select">
+                    <option value="">--Choisir une option--</option>
+                    <option value="echeanceProche">Date d'échéance proche</option>
+                    <option value="echeanceLoin">Date d'échéance eloignée</option>
+                    <option value="prioriteEleve">Priorité élevée</option>
+                    <option value="prioriteMoyenne">Priorité moyenne</option>
+                    <option value="prioriteFaible">Priorité faible</option>
+                </select>
+            </div>
+
+            <div id="divFiltre">
+                <label for="filtre-select">Filtrer par : </label>
+
+                <select name="filtre" id="filtre-select">
+                    <option value="">--Choisir une option--</option>
+                    <option value="enCours">Tâches en cours</option>
+                    <option value="termine">Tâches terminés</option>
+                    <option value="prioriteEleve">Priorité élevée</option>
+                    <option value="prioriteMoyenne">Priorité moyenne</option>
+                    <option value="prioriteFaible">Priorité faible</option>
+                </select>
+            </div>
+
+        </div>
+
+        <!--Liste des taches-->
+        <div>
+
+            <h1>Tâches</h1>
+
+            <div class="scrollbar"> <!-- container -->
+                <li>Un test</li>
+                <li>Un test</li>
+                <li>Un test</li>
+                <li>Un test</li>
+                <li>Un test</li>
+                <li>Un test</li>
+                <li>Un test</li>
+                <li>Un test</li>
+
+            </div>
+
+
+        </div>
+
+        <!--Détails des taches-->
+        <div></div>
+
+    </div>
+
+</body>
+
+<footer></footer>
