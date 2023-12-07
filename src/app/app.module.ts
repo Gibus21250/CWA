@@ -4,12 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
-import { CreationTacheComponent } from './creation-tache/creation-tache.component';
-import { DetailsTacheComponent } from './details-tache/details-tache.component';
-import { ModificationTacheComponent } from './modification-tache/modification-tache.component';
-import { SuppressionTacheComponent } from './suppression-tache/suppression-tache.component';
-import { FiltreTacheComponent } from './filtre-tache/filtre-tache.component';
-import { ListeTacheComponent } from './liste-tache/liste-tache.component';
+import { CreationTacheComponent } from './views/creation-tache/creation-tache.component';
+import { DetailsTacheComponent } from './views/details-tache/details-tache.component';
+import { ModificationTacheComponent } from './views/modification-tache/modification-tache.component';
+import { SuppressionTacheComponent } from './views/suppression-tache/suppression-tache.component';
+import { FiltreTacheComponent } from './views/filtre-tache/filtre-tache.component';
+import { ListeTacheComponent } from './views/liste-tache/liste-tache.component';
 
 @NgModule({
   declarations: [
