@@ -1,29 +1,87 @@
-.scrollbar {
-
-    overflow: scroll;
-    scrollbar-color: rgba(175, 235, 175, 0.796) rgba(186, 186, 186, 0.254);
-    scrollbar-width: thin;
-    width: 300px;
-    height: 100px;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.5s;
 }
 
-.divGlobal{
-    align-items: center;
-    width: 100%;
-    display: flex;
-    background-color: red;
-    margin: 0px;
-
+section {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
 }
 
-.divGauche label {
-    height : 100%;
-    font-family: sans-serif;
-    font-size: 1rem;
-    padding-right: 10px;
-  }
-  
-.divGauche select {
-    font-size: 0.9rem;
+.column {
+  border-radius: 7%;
+  flex: 1;
+  background-color: rgba(242, 242, 0, 0.103);;
+  padding: 15px;
+  margin: 10px;
+  height: 65vh; /*prend 65% de la hauteur de la page A REVOIR SELON BARRE HORAIRE*/
+}
 
-  }
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+/*TODO revoir changement d'image lors du modifierTheme()*/
+h1{
+  text-align: center;
+  color: red;
+  background-color: #f2f2f2;
+  padding: 15px;
+  background-image: url('../../assets/images/etudes.jpg'); /* Remplacez 'votre-image.jpg' par le chemin de votre image */
+  background-size: cover;
+  background-position: center;
+}
+/*Horloge*/
+#date {
+  text-align: center;
+  font-size: 0.75em;
+  color: black;
+}
+
+/* Thèmes */
+
+.gestionPerso-theme {
+  background-color: #FFE299;
+  color: #4B4A67;
+}
+
+.travailPro-theme {
+  background-color: #B195A5;
+  color: #4B4A67;
+}
+
+.etudes-theme {
+  background-color: #8EB8CD;
+  color: #4B4A67;
+}
+
+.gestionProjet-theme {
+  background-color: #F7EBEC;
+  color: #4B4A67;
+}
+
+.sante-theme {
+  background-color: #81AE9D;
+  color: #4B4A67;
+}
+
+.organisation-theme {
+  background-color: #EE8190;
+  color: #4B4A67;
+}
+
+.tachesDomestique-theme {
+  background-color: #F17455;
+  color: #4B4A67;
+}

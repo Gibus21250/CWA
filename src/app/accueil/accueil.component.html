@@ -2,73 +2,81 @@
     <link rel="stylesheet" href="accueil.component.css">
 </head>
 
-<header></header>
-
 <body>
 
-    <div class="divGlobal">
-        <!--Div de recherche-->
-        <div class="divGauche">
-
-            <div id="recherche">
-                <label for="site-search">Rechercher tâche : </label>
-                <input type="search" id="site-search" name="q" />
-
-                <button>Search</button>
+    <header>
+        <h1>
+            <div id="date">
+                <p id="date-item">
+                    {{dateActuelle}}
+                </p>
             </div>
+        </h1>
+    </header>
 
-            <div id="divTrie">
-                <label for="trie-select">Trier par : </label>
+    <section>
+        <!--     Colonne des filtres     -->
+        <div class="column">
+            <h2>Colonne 1</h2>
+            <p>TODO Tri et filtres</p>
 
-                <select name="trie" id="trie-select">
-                    <option value="">--Choisir une option--</option>
-                    <option value="echeanceProche">Date d'échéance proche</option>
-                    <option value="echeanceLoin">Date d'échéance eloignée</option>
-                    <option value="prioriteEleve">Priorité élevée</option>
-                    <option value="prioriteMoyenne">Priorité moyenne</option>
-                    <option value="prioriteFaible">Priorité faible</option>
-                </select>
-            </div>
+            <label for="tri">Trier par :</label>
+            <select id="tri" onchange="trierListe()">
+                <option value="nom">Ordre alphabétique</option>
+                <option value="dateProche">Date d'écheance au plus proche</option>
+                <option value="dateLoin">Date d'écheance au plus loin</option>
+                <option value="prioC">Priorité croissante</option>
+                <option value="prioD">Priorité décroissante</option>
+            </select>
 
-            <div id="divFiltre">
-                <label for="filtre-select">Filtrer par : </label>
+        <hr>
 
-                <select name="filtre" id="filtre-select">
-                    <option value="">--Choisir une option--</option>
-                    <option value="enCours">Tâches en cours</option>
-                    <option value="termine">Tâches terminés</option>
-                    <option value="prioriteEleve">Priorité élevée</option>
-                    <option value="prioriteMoyenne">Priorité moyenne</option>
-                    <option value="prioriteFaible">Priorité faible</option>
-                </select>
-            </div>
+            <label for="categorie">Catégorie :</label>
+            <select id="categorie" onchange="trierListe()">
+                <option value="enCours">En cours</option>
+                <option value="terminee">Terminée</option>
+                <option value="aFaire">À faire</option>
+            </select>
 
+            <hr>
+ 
+            <label for="theme">Thème :</label>
+            <select id="theme" onchange="modifierTheme()">
+                <option value="gestionPerso">Gestion personnelle</option>
+                <option value="travailPro">Travail professionnel</option>
+                <option value="etudes">Éducation et études</option>
+                <option value="gestionProjet">Gestion de projet</option>
+                <option value="sante">Santé et bien-être</option>
+                <option value="organisation">Organisation des évènements</option>
+                <option value="tachesDomestique">Gestion des tâches domestiques</option>
+            </select>
+
+            <hr>
         </div>
 
-        <!--Liste des taches-->
-        <div>
-
-            <h1>Tâches</h1>
-
-            <div class="scrollbar"> <!-- container -->
-                <li>Un test</li>
-                <li>Un test</li>
-                <li>Un test</li>
-                <li>Un test</li>
-                <li>Un test</li>
-                <li>Un test</li>
-                <li>Un test</li>
-                <li>Un test</li>
-
-            </div>
-
-
+        <!--     Colonne affichage de la liste des tâches     -->
+        <div class="column">
+            <h2>Colonne 2</h2>
+            <p>Affichage des tâches</p>
+            <ul id="maListe">
+                <li data-nom="John">John</li>
+                <li data-nom="Jane">Jane</li>
+                <li data-nom="Bob">Bob</li>
+                <!-- Ajoutez d'autres éléments de liste avec des attributs de données -->
+            </ul>
         </div>
 
-        <!--Détails des taches-->
-        <div></div>
 
-    </div>
+        <!--     Colonne de l'affichage des détails d'une tâche     -->
+        <div class="column">
+            <h2>Colonne 3</h2>
+            <p>Détails des tâches</p>
+        </div>
+    </section>
+
+    <footer>
+    <script src="../js/accueil.js"></script>
+    </footer>
 
 </body>
 
