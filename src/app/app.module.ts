@@ -8,6 +8,8 @@ import { CreationTacheComponent } from './creation-tache/creation-tache.componen
 import { DetailsTacheComponent } from './details-tache/details-tache.component';
 import { ModificationTacheComponent } from './modification-tache/modification-tache.component';
 import { SuppressionTacheComponent } from './suppression-tache/suppression-tache.component';
+import { FiltreTacheComponent } from './filtre-tache/filtre-tache.component';
+import { ListeTacheComponent } from './liste-tache/liste-tache.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { SuppressionTacheComponent } from './suppression-tache/suppression-tache
     CreationTacheComponent,
     DetailsTacheComponent,
     ModificationTacheComponent,
-    SuppressionTacheComponent
+    SuppressionTacheComponent,
+    FiltreTacheComponent,
+    ListeTacheComponent
   ],
   imports: [
     BrowserModule,
