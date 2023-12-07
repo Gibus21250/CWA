@@ -1,0 +1,59 @@
+export class Tache {
+
+    private _intitule: string;
+    private _dateCreation: Date;
+    private _dateEcheance: Date;
+    private _description: string;
+    private _priorite: Priorite;
+
+    constructor(i: string, dc: Date, de: Date, desc: string, prio: Priorite) {
+        this._intitule = i;
+        this._dateCreation = dc;
+        this._dateEcheance = de;
+        this._description = desc;
+        this._priorite = prio;
+    }
+
+    //Getter et setters
+
+    get intitule(): string {
+        return this._intitule;
+      }
+    
+      set intitule(value: string) {
+        this._intitule = value;
+      }
+    
+      get dateCreation(): Date {
+        return this._dateCreation;
+      }
+    
+      set dateCreation(value: Date) {
+        this._dateCreation = value;
+      }
+    
+      get dateEcheance(): Date {
+        return this._dateEcheance;
+      }
+    
+      set dateEcheance(value: Date) {
+        this._dateEcheance = value;
+      }
+    
+      get description(): string {
+        return this._description;
+      }
+    
+      set description(value: string) {
+        this._description = value;
+      }
+    
+      get priorite(): Priorite {
+        return this._priorite;
+      }
+    
+      set priorite(value: Priorite) {
+        this._priorite = value;
+      }
+    
+}
