@@ -1,0 +1,9 @@
+select{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border : none;
+    padding: 5px;
+    border-radius: 7px;
+    background-image: linear-gradient(to bottom, rgba(201, 178, 164, 0.275), rgba(128, 51, 0, 0.275));
+    font-size: 90%;
+}
