@@ -1,7 +1,7 @@
 <!--Boite englobant l'item-->
-<div>
+<div class="outside" [appTacheItemDirective]="_tache">
     <h4>{{_tache.intitule}}</h4>
-    <div id="echeance">
+    <div class="echeance">
         {{_formateEcheanceDate}}
     </div>
 </div>
