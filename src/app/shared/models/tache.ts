@@ -1,4 +1,4 @@
-import { Etat } from "../enums/etats";
+import { Etat } from "../enums/etat";
 import { Priorite } from "../enums/priorite";
 
 export class Tache {
