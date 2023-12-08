@@ -1,4 +1,6 @@
 import { Etat } from "../enums/etats";
+import { Priorite } from "../enums/priorite";
+
 export class Tache {
 
     private _intitule: string;
@@ -8,10 +10,9 @@ export class Tache {
     private _priorite: Priorite;
     private _etat: Etat;
 
-    constructor(i: string, dc: Date, de: Date, desc: string, prio: Priorite) {
     constructor(i: string, de: Date, desc: string, prio: Priorite, etat: Etat) {
         this._intitule = i;
-        this._dateCreation = dc;
+        this._dateCreation = new Date();
         this._dateEcheance = de;
         this._description = desc;
         this._priorite = prio;
