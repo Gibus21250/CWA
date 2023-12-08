@@ -1,7 +1,6 @@
 <head>
     <link rel="stylesheet" href="accueil.component.css">
 </head>
-
 <body>
 
     <img class="background" src="../../assets/images/degradeJ.jpg" alt="image de fond">
@@ -18,41 +17,7 @@
     <section>
         <!--     Colonne des filtres     -->
         <div class="column">
-            <h2>Colonne 1</h2>
-            <p>TODO Tri et filtres</p>
-
-            <label for="tri">Trier par :</label>
-            <select id="tri" onchange="trierListe()">
-                <option value="nom">Ordre alphabétique</option>
-                <option value="dateProche">Date d'écheance au plus proche</option>
-                <option value="dateLoin">Date d'écheance au plus loin</option>
-                <option value="prioC">Priorité croissante</option>
-                <option value="prioD">Priorité décroissante</option>
-            </select>
-
-        <hr>
-
-            <label for="categorie">Catégorie :</label>
-            <select id="categorie" onchange="trierListe()">
-                <option value="enCours">En cours</option>
-                <option value="terminee">Terminée</option>
-                <option value="aFaire">À faire</option>
-            </select>
-
-            <hr>
- 
-            <label for="theme">Thème :</label>
-            <select id="theme" onchange="modifierTheme()">
-                <option value="gestionPerso">Gestion personnelle</option>
-                <option value="travailPro">Travail professionnel</option>
-                <option value="etudes">Éducation et études</option>
-                <option value="gestionProjet">Gestion de projet</option>
-                <option value="sante">Santé et bien-être</option>
-                <option value="organisation">Organisation des évènements</option>
-                <option value="tachesDomestique">Gestion des tâches domestiques</option>
-            </select>
-
-            <hr>
+            <app-filtre-tache></app-filtre-tache>
         </div>
 
         <!--     Colonne affichage de la liste des tâches     -->
@@ -66,11 +31,6 @@
             <app-details-tache></app-details-tache>
         </div>
     </section>
-
-    <footer>
-    <script src="../js/accueil.js"></script>
-    </footer>
-
 </body>
 
 <footer></footer>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Tache } from '../../models/tache';
 import { Priorite } from '../../enums/priorite';
-import { Etat } from '../../enums/etats';
+import { Etat } from '../../enums/etat';
 
 @Injectable({
   providedIn: 'root'

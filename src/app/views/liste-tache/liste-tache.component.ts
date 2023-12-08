@@ -1,5 +1,5 @@
 import { Component, NgModule, OnInit } from '@angular/core';
-import { Etat } from 'src/app/shared/enums/etats';
+import { Etat } from 'src/app/shared/enums/etat';
 import { Priorite } from 'src/app/shared/enums/priorite';
 import { Tache } from 'src/app/shared/models/tache';
 import { TacheService } from 'src/app/shared/services/tache/tache.service';
@@ -20,8 +20,6 @@ export class ListeTacheComponent implements OnInit {
 
 
   ngOnInit(): void {
-    
-    
     //On abonne le component au service de la liste des tâches
     this.tacheServ.taches$.subscribe((taches: Tache[]) => {
       this.listeTache = taches;
