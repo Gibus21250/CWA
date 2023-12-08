@@ -16,21 +16,10 @@ button:hover {
     background-color: #317233;
 }
 
-
 #listeTache {
-    max-height: 100%; /* Réglez la hauteur maximale de votre choix */
+    max-height: 100%;
     overflow-y: auto;
     list-style-type: none;
     padding: 0;
-}
-
-li {
-    margin: 5px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-}
-
-li:hover {
-    background-color: gray;
+    margin: 0;
 }

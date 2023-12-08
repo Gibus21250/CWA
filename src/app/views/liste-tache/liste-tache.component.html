@@ -4,7 +4,7 @@
 </div>
 
 <ul id="listeTache">
-    <li *ngFor="let latache of listeTache" (click)="tacheSelectionne()">
+    <li *ngFor="let latache of listeTache" (click)="tacheSelectionne(latache)">
         <app-tache-item [_tache]="latache"></app-tache-item>
     </li>
 </ul>
