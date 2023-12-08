@@ -5,18 +5,17 @@
     <option *ngFor="let filtre of filtres" [value]="filtre">{{isFiltre(filtre) ? FiltreInfos[filtre] : ''}}</option>
 </select>
 
-<hr>
+<br>
 
 <label for="etat">État: </label>
 <select id="etat" (change)="onFiltrerChange($event)">
     <option *ngFor="let etat of etats" [value]="etat">{{isEtat(etat) ? EtatInfos[etat] : ''}}</option>
 </select>
 
-<hr>
+<br>
 
 <label for="theme">Thème: </label>
 <select id="theme" (change)="onThemeChange($event)">
     <option *ngFor="let theme of themes" [value]="theme">{{isEtat(theme) ? ThemesInfo[theme]: ''}}</option>
 </select>
-
-<hr>
+<br>
