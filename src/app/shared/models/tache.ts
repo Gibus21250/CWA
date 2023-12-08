@@ -1,3 +1,4 @@
+import { Etat } from "../enums/etats";
 export class Tache {
 
     private _intitule: string;
@@ -5,13 +6,16 @@ export class Tache {
     private _dateEcheance: Date;
     private _description: string;
     private _priorite: Priorite;
+    private _etat: Etat;
 
     constructor(i: string, dc: Date, de: Date, desc: string, prio: Priorite) {
+    constructor(i: string, de: Date, desc: string, prio: Priorite, etat: Etat) {
         this._intitule = i;
         this._dateCreation = dc;
         this._dateEcheance = de;
         this._description = desc;
         this._priorite = prio;
+        this._etat = etat;
     }
 
     //Getter et setters
@@ -43,6 +47,10 @@ export class Tache {
       get description(): string {
         return this._description;
       }
+
+      get etat(): Etat {
+        return this._etat;
+      }
     
       set description(value: string) {
         this._description = value;
@@ -54,6 +62,10 @@ export class Tache {
     
       set priorite(value: Priorite) {
         this._priorite = value;
+      }
+
+      set etat(value: Etat) {
+        this._etat = value;
       }
     
 }
