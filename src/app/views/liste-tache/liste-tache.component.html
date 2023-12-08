@@ -1,1 +1,10 @@
-<p>liste-tache works!</p>
+<div id="haut">
+    <h2>Tâches</h2>
+    <button type="button">Ajouter</button>
+</div>
+
+<ul id="listeTache">
+    <li *ngFor="let latache of listeTache" (click)="tacheSelectionne(latache)">
+        <app-tache-item [_tache]="latache"></app-tache-item>
+    </li>
+</ul>

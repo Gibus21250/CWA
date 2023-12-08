@@ -1,4 +1,4 @@
-enum Priorite {
+export enum Priorite {
     BASSE,
     NORMALE,
     ELEVEE,
