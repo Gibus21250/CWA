@@ -10,6 +10,8 @@ import { ModificationTacheComponent } from './views/modification-tache/modificat
 import { SuppressionTacheComponent } from './views/suppression-tache/suppression-tache.component';
 import { FiltreTacheComponent } from './views/filtre-tache/filtre-tache.component';
 import { ListeTacheComponent } from './views/liste-tache/liste-tache.component';
+import { TacheItemDirective } from './shared/directives/tache-item/tache-item.directive';
+import { TacheItemComponent } from './views/tache-item/tache-item.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ListeTacheComponent } from './views/liste-tache/liste-tache.component';
     ModificationTacheComponent,
     SuppressionTacheComponent,
     FiltreTacheComponent,
-    ListeTacheComponent
+    ListeTacheComponent,
+    TacheItemDirective,
+    TacheItemComponent
   ],
   imports: [
     BrowserModule,
