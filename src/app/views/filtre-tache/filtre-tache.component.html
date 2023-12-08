@@ -16,7 +16,7 @@
 
 <label for="theme">Thème: </label>
 <select id="theme" (change)="onThemeChange($event)">
-    <option *ngFor="let theme of themes" [value]="theme">{{isEtat(theme) ? ThemesInfo[theme]: ''}}></option>
+    <option *ngFor="let theme of themes" [value]="theme">{{isEtat(theme) ? ThemesInfo[theme]: ''}}</option>
 </select>
 
 <hr>
