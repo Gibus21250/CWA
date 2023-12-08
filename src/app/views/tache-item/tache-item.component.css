@@ -5,6 +5,9 @@
     position: relative;
     background-color: currentColor;
     transition: background-color 0.2s ease;
+    border-radius: 7px;
+    margin: 10px;
+    padding-left: 10px;
 }
 
 .outside:hover:before {
@@ -14,13 +17,16 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: black;
-    opacity: 0.2;
+    background-color: rgba(75, 71, 86, 0.904);
+    opacity: 0.1;
     transition: opacity 0.3s ease;
+    color:  #ff242438;
+    border-radius: 7px;
 }
 
 .outside:hover {
     background-color: currentColor;
+    border-radius: 7px;
 }
 
 .echeance {

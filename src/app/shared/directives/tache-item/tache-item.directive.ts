@@ -12,19 +12,19 @@ export class TacheItemDirective {
   set appTacheItemDirective(tache: Tache) {
     switch (tache.priorite) {
       case Priorite.BASSE:
-        this.renderer.setStyle(this.el.nativeElement, 'background-color', 'lightgreen');
+        this.renderer.setStyle(this.el.nativeElement, 'background-color', '#ffffff38');
         break;
       case Priorite.NORMALE:
-        this.renderer.setStyle(this.el.nativeElement, 'background-color', 'lightyellow');
+        this.renderer.setStyle(this.el.nativeElement, 'background-color', '#64ff7138');
         break;
       case Priorite.ELEVEE:
-        this.renderer.setStyle(this.el.nativeElement, 'background-color', 'lightcoral');
+        this.renderer.setStyle(this.el.nativeElement, 'background-color', '#ffc65438');
         break;
       case Priorite.PRIORITAIRE:
-        this.renderer.setStyle(this.el.nativeElement, 'background-color', '#B22222');
+        this.renderer.setStyle(this.el.nativeElement, 'background-color', '#ff613e38');
         break;
       case Priorite.CRITIQUE:
-        this.renderer.setStyle(this.el.nativeElement, 'background-color', '#8B0000');
+        this.renderer.setStyle(this.el.nativeElement, 'background-color', '#ff242438');
         break;
       default:
         break;
@@ -33,3 +33,23 @@ export class TacheItemDirective {
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 }
+
+/*
+case Priorite.BASSE:
+  this.renderer.setStyle(this.el.nativeElement, 'background-color', '#ffffff38');
+  break;
+case Priorite.NORMALE:
+  this.renderer.setStyle(this.el.nativeElement, 'background-color', '#7b9cff3c');
+  break;
+case Priorite.ELEVEE:
+  this.renderer.setStyle(this.el.nativeElement, 'background-color', '#5c46ff3c');
+  break;
+case Priorite.PRIORITAIRE:
+  this.renderer.setStyle(this.el.nativeElement, 'background-color', '#c130ff3c');
+  break;
+case Priorite.CRITIQUE:
+  this.renderer.setStyle(this.el.nativeElement, 'background-color', '#ff3bf540');
+  break;
+default:
+  break;
+*/
