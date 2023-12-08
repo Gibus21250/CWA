@@ -20,18 +20,6 @@ section {
   height: 65vh; /*prend 65% de la hauteur de la page A REVOIR SELON BARRE HORAIRE*/
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  margin: 5px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  background-color: #f9f9f9;
-}
-
 /*TODO revoir changement d'image lors du modifierTheme()*/
 h1{
   text-align: center;
