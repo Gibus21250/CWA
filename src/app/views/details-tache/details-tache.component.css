@@ -1,0 +1,54 @@
+.btnModif{
+    padding: 10px;
+    background-color: #64ff7152;
+    width: 100px;
+    font-size: 100%;
+    color: black;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.btnModif:hover {
+    background-color: #5be96775;
+}
+
+.btnSuppr{
+    padding: 10px;
+    background-color: #af4c4c77;
+    width: 100px;
+    font-size: 100%;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.btnSuppr:hover {
+    background-color: #af4c4cb7;
+}
+
+.content_table{
+    display: grid;
+    grid-template-rows: 2% 2% 2% 2% auto 5%;
+    grid-gap :10px;
+    grid-auto-rows: minmax(100px,auto);
+    width: 100%;
+  }
+
+#dt-outside table{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#dt-outside table tr th{
+    text-align: center;
+    font-size: 30px;
+}
+
+#dt-outside table tr td{
+    text-align: left;
+    padding-top: 50px;
+    font-size: 120%;
+}

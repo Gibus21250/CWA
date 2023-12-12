@@ -14,23 +14,23 @@
         </h1>
     </header>
 
-    <section>
+    <div id="page_content">
         <!--     Colonne des filtres     -->
-        <div class="column">
+        <div class="column" id="filter">
             <app-filtre-tache></app-filtre-tache>
         </div>
 
         <!--     Colonne affichage de la liste des tâches     -->
-        <div class="column">
+        <div class="column" id="tasks">
             <app-liste-tache></app-liste-tache>
         </div>
 
 
         <!--     Colonne de l'affichage des détails d'une tâche     -->
-        <div class="column">
+        <div class="column" id="content">
             <app-details-tache></app-details-tache>
         </div>
-    </section>
+    </div>
 </body>
 
 <footer></footer>

@@ -16,10 +16,12 @@ img.background{
   filter: blur(3px);
 }
 
-section {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
+#page_content{
+  display: grid;
+  grid-template-columns: 15% 20% auto;
+  grid-gap :10px;
+  grid-auto-rows: minmax(100px,auto);
+  width: 100%;
 }
 
 .column {
@@ -28,7 +30,7 @@ section {
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.248), rgba(128, 51, 0, 0.275));
   padding: 15px;
   margin: 10px;
-  height: 73vh; /*prend 65% de la hauteur de la page A REVOIR SELON BARRE HORAIRE*/
+  height: 75vh; /*prend 65% de la hauteur de la page A REVOIR SELON BARRE HORAIRE*/
 }
 
 /*TODO revoir changement d'image lors du modifierTheme()*/
@@ -81,4 +83,28 @@ h1{
 .tachesDomestique-theme {
   background-color: #F17455;
   color: #4B4A67;
+}
+
+#filter{
+  text-align: left;
+  overflow: hidden;
+}
+
+/*
+#filter:hover{
+  text-align: left;
+  width:auto;
+}
+*/
+
+#tasks{
+  text-align: justify;
+  overflow: hidden;
+
+}
+
+#content{
+  text-align: justify;
+  overflow:scroll;
+  
 }

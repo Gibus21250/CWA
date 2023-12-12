@@ -1,8 +1,31 @@
 <div id="dt-outside">
     <!-- Affichage uniquement si une tache a été selectionnée/cliquée-->
-    <table *ngIf="tache">
+    <table *ngIf="tache" class="content_table">
         <!-- affichage des détails-->
-        <p>Faut faire un zolie affichage</p>
+        <tr>
+            <th>{{tache.intitule}}</th>
+        </tr>
+        <tr>
+            <td>Date de création : {{tache.dateCreation}}</td>
+        </tr>
+        <tr>
+            <td>Date d'echéance : {{tache.dateEcheance}}</td>
+        </tr>
+        <tr>
+            <td>Description : {{tache.description}}</td>
+        </tr>
+        <tr>
+            <td>Priorité : {{tache.priorite}}</td>
+        </tr>
+        <tr>
+            <td>Etat : {{tache.etat}}</td>
+        </tr>
+        
+        <tr>
+            <td><button type="button" class="btnModif">Modifier</button></td>
+            <td><button type="button" class="btnSuppr">Supprimer</button>  </td>
+        </tr>    
     </table>
+
     
 </div>
