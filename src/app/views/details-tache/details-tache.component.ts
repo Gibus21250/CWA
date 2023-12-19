@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Tache } from 'src/app/shared/models/tache';
 import { TacheService } from 'src/app/shared/services/tache/tache.service';
+import { Etat, EtatInfos} from 'src/app/shared/enums/etat';
+import { Priorite, PrioriteInfos } from 'src/app/shared/enums/priorite';
 
 @Component({
   selector: 'app-details-tache',
@@ -11,9 +13,17 @@ export class DetailsTacheComponent {
 
   public tache: Tache | null | undefined;
 
+  public etatStr: string = "";
+  public prioriteStr: string = "";
+
   constructor(private tacheService: TacheService) {
     tacheService.selectedTache$.subscribe((newTache: Tache | null) => {
       this.tache = newTache;
+      if(this.tache != undefined){
+        this.etatStr = EtatInfos[this.tache.etat];
+        this.prioriteStr = PrioriteInfos[this.tache.priorite];
+      }
+      
     })
   }
 
