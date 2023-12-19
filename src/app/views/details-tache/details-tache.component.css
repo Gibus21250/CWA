@@ -1,6 +1,6 @@
 .btnModif{
     padding: 10px;
-    background-color: #64ff7152;
+    background-color: #64a87195;
     width: 100px;
     font-size: 100%;
     color: black;
@@ -9,7 +9,7 @@
     cursor: pointer;
 }
 .btnModif:hover {
-    background-color: #5be96775;
+    background-color: #5a966595;
 }
 
 .btnSuppr{
@@ -44,6 +44,8 @@
 
 #dt-outside table tr th{
     text-align: center;
+    margin-left:auto;
+    margin-right:auto;
     font-size: 30px;
 }
 

@@ -1,21 +1,46 @@
 <h2>Filtres</h2>
 
-<label for="tri">Trier par: </label>
-<select id="tri" (change)="onTrierChange($event)">
+<label class="label" for="tri">Trier par: </label>
+<br>
+<select class="select" id="tri" (change)="onTrierChange($event)">
     <option *ngFor="let filtre of filtres" [value]="filtre">{{isFiltre(filtre) ? FiltreInfos[filtre] : ''}}</option>
 </select>
 
 <br>
 
-<label for="etat">État: </label>
-<select id="etat" (change)="onFiltrerChange($event)">
+<label class="label" for="etat">État: </label>
+<br>
+<select class="select" id="etat" (change)="onFiltrerChange($event)">
     <option *ngFor="let etat of etats" [value]="etat">{{isEtat(etat) ? EtatInfos[etat] : ''}}</option>
 </select>
 
 <br>
-
-<label for="theme">Thème: </label>
-<select id="theme" (change)="onThemeChange($event)">
+<label class="label" for="theme">Thème: </label>
+<br>
+<select class="select" id="theme" (change)="onThemeChange($event)">
     <option *ngFor="let theme of themes" [value]="theme">{{isEtat(theme) ? ThemesInfo[theme]: ''}}</option>
 </select>
 <br>
+
+<div class="divTheme">
+    <button><img class="background" src="../../assets/icones/personne.png" alt="theme perso"></button>
+</div>
+<div class="divTheme">
+    <button><img class="background" src="../../assets/icones/pro.png" alt="theme professionnel"></button>
+</div>
+<div class="divTheme">
+    <button><img class="background" src="../../assets/icones/livre.png" alt="theme educations"></button>
+</div>
+<div class="divTheme">
+    <button><img class="background" src="../../assets/icones/calendrier.png" alt="theme gestion de projet"></button>
+</div>
+<div class="divTheme">
+    <button><img class="background" src="../../assets/icones/sante.png" alt="theme sante et bien etre"></button>
+</div>
+<div class="divTheme">
+    <button><img class="background" src="../../assets/icones/etoile.png" alt="theme evenement"></button>
+</div>
+<div class="divTheme">
+    <button><img class="background" src="../../assets/icones/eponge.png" alt="theme tache domestique"></button>
+</div>
+

@@ -1,8 +1,10 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: Roboto Mono, sans-serif;
   transition: background-color 0.5s;
+  color: rgb(56, 49, 75);
+  background-clip:initial;
 }
 
 img.background{
@@ -12,35 +14,32 @@ img.background{
   z-index: -1;
   width: 100%;
   height: 100%;
-  -webkit-filter: blur(3px); /* Safari 6.0 - 9.0 */
-  filter: blur(3px);
+  /*-webkit-filter: blur(3px); /* Safari 6.0 - 9.0 */
+  /*filter: blur(3px);*/
 }
 
 #page_content{
   display: grid;
-  grid-template-columns: 15% 20% auto;
+  grid-template-columns: 6% 30% auto;
   grid-gap :10px;
   grid-auto-rows: minmax(100px,auto);
   width: 100%;
 }
 
 .column {
-  border-radius: 7%;
+  border-radius: 20px;
+  border-color: rgba(255, 255, 255, 0.14);
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: inset 0 0 1em rgba(168, 168, 168, 0.478);
   flex: 1;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.248), rgba(128, 51, 0, 0.275));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.162), rgba(205, 205, 205, 0.083));
+  backdrop-filter: blur(10px);
   padding: 15px;
   margin: 10px;
   height: 75vh; /*prend 65% de la hauteur de la page A REVOIR SELON BARRE HORAIRE*/
 }
 
-/*TODO revoir changement d'image lors du modifierTheme()*/
-h1{
-  text-align: center;
-  color: red;
-  padding-top: 5px;
-  background-size: cover;
-  background-position: center;
-}
 /*Horloge*/
 #date {
   text-align: center;

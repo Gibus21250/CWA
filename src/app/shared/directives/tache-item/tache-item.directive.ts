@@ -12,19 +12,24 @@ export class TacheItemDirective {
   set appTacheItemDirective(tache: Tache) {
     switch (tache.priorite) {
       case Priorite.BASSE:
-        this.renderer.setStyle(this.el.nativeElement, 'background-color', '#ffffff38');
+        this.renderer.setStyle(this.el.nativeElement, 'background-color', 'rgba(232, 232, 232, 0.25)');
+        this.renderer.setStyle(this.el.nativeElement, 'box-shadow', '0px -10px 0px 0px #64a87190 inset');
         break;
       case Priorite.NORMALE:
-        this.renderer.setStyle(this.el.nativeElement, 'background-color', '#64ff7138');
+        this.renderer.setStyle(this.el.nativeElement, 'background-color', 'rgba(232, 232, 232, 0.25)');
+        this.renderer.setStyle(this.el.nativeElement, 'box-shadow', '0px -10px 0px 0px #ffffff90 inset');
         break;
       case Priorite.ELEVEE:
-        this.renderer.setStyle(this.el.nativeElement, 'background-color', '#ffc65438');
+        this.renderer.setStyle(this.el.nativeElement, 'background-color', 'rgba(232, 232, 232, 0.25)');
+        this.renderer.setStyle(this.el.nativeElement, 'box-shadow', '0px -10px 0px 0px #ffc65490 inset');
         break;
       case Priorite.PRIORITAIRE:
-        this.renderer.setStyle(this.el.nativeElement, 'background-color', '#ff613e38');
+        this.renderer.setStyle(this.el.nativeElement, 'background-color', 'rgba(232, 232, 232, 0.25)');
+        this.renderer.setStyle(this.el.nativeElement, 'box-shadow', '0px -10px 0px 0px #ff613e90 inset');
         break;
       case Priorite.CRITIQUE:
-        this.renderer.setStyle(this.el.nativeElement, 'background-color', '#ff242438');
+        this.renderer.setStyle(this.el.nativeElement, 'background-color', 'rgba(232, 232, 232, 0.25)');
+        this.renderer.setStyle(this.el.nativeElement, 'box-shadow', '0px -10px 0px 0px #5c376d90 inset');
         break;
       default:
         break;
