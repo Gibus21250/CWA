@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { interval } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-accueil',
@@ -11,7 +12,7 @@ export class AccueilComponent implements OnInit{
   dateActuelle: string | undefined;
 
   ngOnInit(): void {
-    //Première initialisation de l'hrologe
+    //Première initialisation de l'horloge
     this.updateDate();
 
     //On s'abonne à une clock de 1s, pour executer le code actualisant l'horloge dans l'affichage
@@ -24,5 +25,15 @@ export class AccueilComponent implements OnInit{
     let date = new Date();
     this.dateActuelle = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds() + ' • ' + date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear();
   }
+
+  //POPUP
+  constructor(private router: Router) {}
+
+  // Méthode pour afficher la popup
+  showPopup() {
+    this.router.navigate(['/popup']);
+  }
+
+  
 
 }

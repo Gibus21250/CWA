@@ -1,0 +1,29 @@
+
+.popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Ajustez la largeur selon vos besoins */
+  }
+
+  .popup-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .popup-buttons button {
+    margin: 0 10px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+
+  .textarea {
+    width: 100%;
+    box-sizing: border-box; 
+  }
