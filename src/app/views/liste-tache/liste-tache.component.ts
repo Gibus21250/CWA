@@ -32,8 +32,8 @@ export class ListeTacheComponent implements OnInit {
     this.tacheServ.onSelectTache(tache);
   }
 
-  // Méthode pour afficher la popup
+  // Méthode pour afficher la popup de création de tâche
   showPopup() {
-    this.router.navigate(['/popup']);
+    this.router.navigate(['/creationPopup']);
   }
 }

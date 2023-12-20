@@ -4,6 +4,7 @@ import { TacheService } from 'src/app/shared/services/tache/tache.service';
 import { EtatInfos} from 'src/app/shared/enums/etat';
 import { PrioriteInfos } from 'src/app/shared/enums/priorite';
 import { DatePipe } from '@angular/common'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-details-tache',
@@ -20,7 +21,7 @@ export class DetailsTacheComponent {
   public dateCreatStr: string = "";
   public dateEcheanceStr: string = "";
 
-  constructor(private tacheService: TacheService, private datepipe: DatePipe) {
+  constructor(private tacheService: TacheService, private datepipe: DatePipe,private router: Router) {
     tacheService.selectedTache$.subscribe((newTache: Tache | null) => {
       this.tache = newTache;
       if(this.tache != undefined){
@@ -39,5 +40,11 @@ export class DetailsTacheComponent {
       
     })
   }
+
+  // Méthode pour afficher la popup de modification
+  showPopupM() {
+    this.router.navigate(['/modificationPopup']);
+  }
+
 
 }

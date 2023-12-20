@@ -1,1 +1,36 @@
-<p>modification-tache works!</p>
+<div class="popup-container">
+
+    <h1>Modifier cette tâche ?</h1>
+    <form>
+      
+      <label for="nom">Nom : </label>
+      <input type="text" id="nom" name="nom" required>
+
+      <br>
+
+      <label for="dateEcheance">Date d'échéance :</label>
+      <!-- Insérer pour la date-->
+
+      <br>
+      
+      <textarea type="textarea" class="textarea" placeholder="Description"></textarea>
+
+      <br>
+
+      <label for="priorite">Priorité :</label>
+      <!-- Insérer pour les bulles et celle sélectionnée remplir /!\ que 1 peut être choisie -->
+
+      <br>
+
+      <label for="priorite">État :</label>
+      <!-- Insérer pour 3 états (à faire, en cours, terminé) boutons radios ? Liste ? -->
+
+
+    </form>
+
+    <div class="popup-buttons">
+      <button class="btnPopA" (click)="closePopup()">Annuler</button>
+      <button class="btnPopV" (click)="submit()">Valider</button>
+    </div>
+
+  </div>

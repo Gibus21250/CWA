@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-//import { PopupComponent } from './views/popup/popup.component';
 import { CreationTacheComponent } from './views/creation-tache/creation-tache.component';
+import { ModificationTacheComponent } from './views/modification-tache/modification-tache.component';
 
 const routes: Routes = [
-  { path: 'popup', component: CreationTacheComponent },
+  { path: 'creationPopup', component: CreationTacheComponent },
+  { path: 'modificationPopup', component: ModificationTacheComponent },
 ];
 
 @NgModule({
