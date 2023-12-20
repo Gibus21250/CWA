@@ -3,6 +3,7 @@ import { Etat } from 'src/app/shared/enums/etat';
 import { Priorite } from 'src/app/shared/enums/priorite';
 import { Tache } from 'src/app/shared/models/tache';
 import { TacheService } from 'src/app/shared/services/tache/tache.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-liste-tache',
@@ -12,8 +13,7 @@ import { TacheService } from 'src/app/shared/services/tache/tache.service';
 
 export class ListeTacheComponent implements OnInit {
 
-  
-  constructor(private tacheServ: TacheService) {
+  constructor(private tacheServ: TacheService,private router: Router) {
   }
 
   listeTache: Tache[] = [];
@@ -26,10 +26,14 @@ export class ListeTacheComponent implements OnInit {
     })
   }
 
-
   public tacheSelectionne(tache: Tache) {
     
     //Une tache a été selectionnée, on l'envoie au service des tâches
     this.tacheServ.onSelectTache(tache);
+  }
+
+  // Méthode pour afficher la popup
+  showPopup() {
+    this.router.navigate(['/popup']);
   }
 }

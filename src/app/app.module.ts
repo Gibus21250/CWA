@@ -12,7 +12,6 @@ import { FiltreTacheComponent } from './views/filtre-tache/filtre-tache.componen
 import { ListeTacheComponent } from './views/liste-tache/liste-tache.component';
 import { TacheItemDirective } from './shared/directives/tache-item/tache-item.directive';
 import { TacheItemComponent } from './views/tache-item/tache-item.component';
-import { PopupComponent } from './views/popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { PopupComponent } from './views/popup/popup.component';
     ListeTacheComponent,
     TacheItemDirective,
     TacheItemComponent,
-    PopupComponent
   ],
   imports: [
     BrowserModule,
