@@ -82,55 +82,30 @@
     transform: scale(1);
 }
 
-.btnVert {
+#btnVert {
 
-    background-color: #64a87100;
-    border: solid 5px #64a87190;
-}
-
-.btnBlanc {
-    background-color: #ffffff00;
-    border: solid 5px#ffffff90;
-}
-
-.btnJaune {
-    background-color: #ffc65400;
-    border: solid 5px #ffc65490;
-}
-
-.btnRouge {
-    background-color: #ff613e00;
-    border: 5px solid #ff613e90;
-}
-
-.btnViolet {
-    background-color: #5c376d00;
-    border: 5px solid #5c376d90;
-}
-
-.btnRond button.selected.btnVert {
     background-color: #64a87190;
-    border: solid 5px #64a87190;
+    border: solid 5px #64a87100;
 }
 
-.btnRond button.selected.btnBlanc {
+#btnBlanc {
     background-color: #ffffff90;
-    border: solid 5px#ffffff90;
+    border: solid 5px#ffffff00;
 }
 
-.btnRond button.selected.btnJaune {
+#btnJaune {
     background-color: #ffc65490;
-    border: solid 5px #ffc65490;
+    border: solid 5px #ffc65400;
 }
 
-.btnRond button.selected.btnRouge {
+#btnRouge {
     background-color: #ff613e90;
-    border: 5px solid #ff613e90;
+    border: 5px solid #ff613e00;
 }
 
-.btnRond button.selected.btnViolet {
+#btnViolet {
     background-color: #5c376d90;
-    border: 5px solid #5c376d90;
+    border: 5px solid #5c376d00;
 }
 
 .btnFilter {

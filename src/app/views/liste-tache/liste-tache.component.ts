@@ -16,7 +16,7 @@ import { Tri } from 'src/app/shared/enums/tris';
 export class ListeTacheComponent implements OnInit {
 
   listeTache: Tache[] = [];
-  listePrioSelected: boolean[] = [false, false, false, false, false];
+  listePrioSelected: boolean[] = [true, true, true, true, true];
 
   constructor(private tacheServ: TacheService,private router: Router) {
   }
@@ -33,6 +33,67 @@ export class ListeTacheComponent implements OnInit {
 
   onPriorityChange(p: Priorite): void {
     this.listePrioSelected[p] = !this.listePrioSelected[p];
+
+    const doc = document;
+    let monElement: HTMLElement | null = null;
+
+    switch(p){
+      case 0:
+        monElement = doc.getElementById('btnVert') as HTMLElement;
+        if(this.listePrioSelected[0]){
+          monElement.style.background="#64a87190";
+          monElement.style.borderColor="#64a87100";
+        }
+        else{
+          monElement.style.background="#64a87100";
+          monElement.style.borderColor="#64a87190";
+        }
+      break;
+      case 1:
+        monElement = doc.getElementById('btnBlanc') as HTMLElement;
+        if(this.listePrioSelected[1]){
+          monElement.style.background="#ffffff90";
+          monElement.style.borderColor="#ffffff00";
+        }
+        else{
+          monElement.style.background="#ffffff00";
+          monElement.style.borderColor="#ffffff90";
+        }
+      break;
+      case 2:
+        monElement = doc.getElementById('btnJaune') as HTMLElement;
+        if(this.listePrioSelected[2]){
+          monElement.style.background="#ffc65490";
+          monElement.style.borderColor="#ffc65400";
+        }
+        else{
+          monElement.style.background="#ffc65400";
+          monElement.style.borderColor="#ffc65490";
+        }
+      break;
+      case 3:
+        monElement = doc.getElementById('btnRouge') as HTMLElement;
+        if(this.listePrioSelected[3]){
+          monElement.style.background="#ff613e90";
+          monElement.style.borderColor="#ff613e00";
+        }
+        else{
+          monElement.style.background="#ff613e00";
+          monElement.style.borderColor="#ff613e90";
+        }
+      break;
+      case 4:
+        monElement = doc.getElementById('btnViolet') as HTMLElement;
+        if(this.listePrioSelected[4]){
+          monElement.style.background="#5c376d90";
+          monElement.style.borderColor="#5c376d00";
+        }
+        else{
+          monElement.style.background="#5c376d00";
+          monElement.style.borderColor="#5c376d90";
+        }
+      break;
+    }
 
     this.updateListe();
   }
