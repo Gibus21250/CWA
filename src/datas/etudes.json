@@ -1,18 +1,18 @@
 [
     {
-        "_intitule": "Scéance de running",
+        "_intitule": "Rapport projet",
         "_dateCreation": "2023-12-22T13:44:12.582Z",
         "_dateEcheance": "2023-12-23T23:00:00.000Z",
-        "_description": "Première scéance 1km",
-        "_priorite": 0,
+        "_description": "Finir le rapport du projet de CWA",
+        "_priorite": 4,
         "_etat": 1
     },
     {
-        "_intitule": "Piscine",
+        "_intitule": "Révisions",
         "_dateCreation": "2023-12-22T13:44:12.582Z",
         "_dateEcheance": "2023-12-08T19:00:00.000Z",
-        "_description": "Premiere tache",
-        "_priorite": 1,
-        "_etat": 1
+        "_description": "Tout réviser",
+        "_priorite": 2,
+        "_etat": 2
     }
 ]

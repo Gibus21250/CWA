@@ -13,6 +13,10 @@ import { ListeTacheComponent } from './views/liste-tache/liste-tache.component';
 import { TacheItemDirective } from './shared/directives/tache-item/tache-item.directive';
 import { TacheItemComponent } from './views/tache-item/tache-item.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     DatePipe
