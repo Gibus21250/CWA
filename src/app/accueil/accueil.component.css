@@ -104,6 +104,6 @@ img.background{
 
 #content{
   text-align: justify;
-  overflow:scroll;
+  overflow:hidden;
   
 }
