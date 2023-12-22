@@ -23,29 +23,28 @@
       <br>
 
       <label for="priorite">Priorité :</label>
-      <!-- Insérer pour les bulles et celle sélectionnée remplir /!\ que 1 peut être choisie -->
       <div class="btnRond">
-        <button class="btnVert" type="button"></button>
-        <button class="btnBlanc" type="button"></button>
-        <button class="btnJaune" type="button"></button>
-        <button class="btnRouge" type="button"></button>
-        <button class="btnViolet" type="button"></button>
+        <button class="btnVert" [class.selected]="selectedButton === 0" (click)="selectButton(0)"></button>
+        <button class="btnBlanc" [class.selected]="selectedButton === 1" (click)="selectButton(1)"></button>
+        <button class="btnJaune" [class.selected]="selectedButton === 2" (click)="selectButton(2)"></button>
+        <button class="btnRouge" [class.selected]="selectedButton === 3" (click)="selectButton(3)"></button>
+        <button class="btnViolet" [class.selected]="selectedButton === 4" (click)="selectButton(4)"></button>
       </div>
 
       <br>
 
       <label for="priorite">État :</label>
-      <!-- Insérer pour 3 états (à faire, en cours, terminé) boutons radios ? Liste ? -->
+      <!--A refaire-->
       <label>
-        <input type="radio" [(ngModel)]="selectedOption" value="option1"> À faire
+        <input type="radio" [class.selected]="selectedEtat === 'aFaire'" (click)="selectEtat('aFaire')" (select)=true> À faire
       </label>
       
       <label>
-        <input type="radio" [(ngModel)]="selectedOption" value="option2"> En cours
+        <input type="radio" [class.selected]="selectedEtat === 'enCours'" (click)="selectEtat('enCours')"> En cours
       </label>
       
       <label>
-        <input type="radio" [(ngModel)]="selectedOption" value="option3"> Terminé
+        <input type="radio" [class.selected]="selectedEtat === 'termine'" (click)="selectEtat('termine')"> Terminé
       </label>
 
 

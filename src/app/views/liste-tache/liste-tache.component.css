@@ -70,7 +70,6 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    
 }
 
 .btnRond button:hover {
@@ -109,21 +108,43 @@
     border: 5px solid #5c376d90;
 }
 
+.btnRond button.selected.btnVert {
+    background-color: #64a87190;
+    border: solid 5px #64a87190;
+}
+
+.btnRond button.selected.btnBlanc {
+    background-color: #ffffff90;
+    border: solid 5px#ffffff90;
+}
+
+.btnRond button.selected.btnJaune {
+    background-color: #ffc65490;
+    border: solid 5px #ffc65490;
+}
+
+.btnRond button.selected.btnRouge {
+    background-color: #ff613e90;
+    border: 5px solid #ff613e90;
+}
+
+.btnRond button.selected.btnViolet {
+    background-color: #5c376d90;
+    border: 5px solid #5c376d90;
+}
+
 .btnFilter {
     flex: 1;
     cursor: pointer;
     float: right;
     border:none;
-
     background-color: #5c376d00;
 }
 
 .btnFilter img {
-
     position:inherit;
     width: 50%;
     height:50%;
-
 }
 
 .btnFilter :hover {
