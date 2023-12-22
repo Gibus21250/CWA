@@ -5,9 +5,10 @@ body {
   transition: background-color 0.5s;
   color: rgb(56, 49, 75);
   background-clip:initial;
+  overflow: hidden;
 }
 
-img.background{
+#background{
   position: absolute;
   left: 0px;
   top: 0px;
@@ -42,7 +43,7 @@ img.background{
 
 /*Horloge*/
 #date {
-  margin-top: 10px;
+  margin-top: 20px;
   text-align: center;
   font-size: 1em;
 }
