@@ -98,3 +98,59 @@
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.162), rgba(205, 205, 205, 0.083));
     backdrop-filter: blur(10px);
 }
+
+.btnRond {
+    display: flex;
+    align-items: center;
+    width: 80%;
+}
+
+
+.btnRond button {  
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 5%;
+    font-size: 10px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    
+}
+
+.btnRond button:hover {
+    transition: transform 0.2s ease;
+    transform: scale(1.3);
+}
+
+.btnRond button:not(:hover) {
+    transition: transform 0.2s ease;
+    transform: scale(1);
+}
+
+.btnVert {
+
+    background-color: #64a87100;
+    border: solid 5px #64a87190;
+}
+
+.btnBlanc {
+    background-color: #ffffff00;
+    border: solid 5px#ffffff90;
+}
+
+.btnJaune {
+    background-color: #ffc65400;
+    border: solid 5px #ffc65490;
+}
+
+.btnRouge {
+    background-color: #ff613e00;
+    border: 5px solid #ff613e90;
+}
+
+.btnViolet {
+    background-color: #5c376d00;
+    border: 5px solid #5c376d90;
+}

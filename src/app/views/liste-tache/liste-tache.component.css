@@ -60,8 +60,7 @@
     background-image: linear-gradient(to bottom, rgba(201, 89, 89, 0.748), rgba(255, 255, 255, 0.248));
 }
 
-.btnRond button {
-    
+.btnRond button {  
     display: inline-block;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -111,7 +110,6 @@
 }
 
 .btnFilter {
-
     flex: 1;
     cursor: pointer;
     float: right;

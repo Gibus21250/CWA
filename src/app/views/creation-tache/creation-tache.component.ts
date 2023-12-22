@@ -12,6 +12,7 @@ export class CreationTacheComponent {
   constructor(private router: Router) {}
 
   dateControl = new FormControl(); //FormControl pour suivre la date
+  selectedOption: string = 'option1'; // État initial pour
 
   // Fermer la popup
   closePopup() {
@@ -21,11 +22,8 @@ export class CreationTacheComponent {
   //Valider la création de tâche
   submit() {
     const selectedDate = this.dateControl.value; // Récupérer la date
-    /* const date = new Date(selectedDate); // Convertir la date en objet Date
-     const day = date.getDate(); // Récupérer le jour
-     const month = date.getMonth() + 1; // Récupérer le mois
-     const year = date.getFullYear(); // Récupérer l'année
-   */
+
+    //récupérer les valeurs des champs
     // Logique pour soumettre la tache
   }
 
