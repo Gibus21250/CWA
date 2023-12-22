@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, catchError } from 'rxjs';
 import { Tache } from '../../models/tache';
 import { Priorite } from '../../enums/priorite';
 import { Etat } from '../../enums/etat';
 import { Theme } from '../../enums/theme';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -21,38 +21,58 @@ export class TacheService {
   public taches$ = this.tachesSubject.asObservable();
   public selectedTache$ = this.selectedTacheSubject.asObservable();
 
+  //Liste originale, pour éviter de charger en boucle les données depuis le serveur distant
   private tachesOrigin: Tache[] = [];
+  //Les tâche, sont celles qui sont envoyées après filtre et tris aux abonnés
   public lesTaches: Tache[] = [];
+
+  private activeTheme = 0;
 
   constructor(private http: HttpClient) {
   }
 
   onThemeChange(theme: Theme) : void {
-    let lTaches: Tache[] = [];
-    let chemin = "http://localhost:3000/datas/";
-    switch (theme) {
-      case Theme.GESTIONPERSO:
-        chemin += "gestionperso.json";
-        break;
-      case Theme.PRO:
-        chemin += "travailperso.json";
-        break;
-      case Theme.ETUDES:
-        chemin += "etudes.json";
-        break;
-      case Theme.GESTIONPROJET:
-        chemin += "gestionprojet.json";
-        break;
-      case Theme.SANTE:
-        chemin += "sante.json";
-        break;
-      case Theme.ORGANISATION:
-        chemin += "organisation.json";
-        break;
-      case Theme.TACHESDOMESTIQUE:
-        chemin += "tachesdomestiques.json";
-        break;
-    }
+    this.activeTheme = theme;
+    this.chargerDonnee();
+  }
+
+  onPrioriteChange(p: Priorite[]): void {
+
+    //On a juste à filtrer directement sur la liste de tache visible
+    this.lesTaches = this.tachesOrigin;
+
+    this.lesTaches = this.tachesOrigin.filter(tache => {
+      let res: Boolean = false;
+      p.forEach(prio => {
+        if(tache.priorite === prio)
+          res = true;
+      });
+      return res;
+      }
+    );
+
+    this.tachesSubject.next(this.lesTaches);
+
+  }
+
+  onSelectTache(tache: Tache) : void {
+    //On emet à tous les abonné la tache selectionnée (doit être capturé par le component Detail-Tache)
+    this.selectedTacheSubject.next(tache);
+  }
+
+  addTache(tache: Tache): void {
+    this.tachesOrigin.push(tache);
+    
+    this.lesTaches = this.tachesOrigin;
+    this.tachesSubject.next(this.lesTaches);
+    this.sauvegarder();
+  }
+
+  private chargerDonnee(): void {
+
+    let chemin = "http://localhost:25565/datas/";
+    
+    chemin += this.getFileName(this.activeTheme);
 
     //Charger les données depuis le json
     this.http.get<Tache[]>(chemin).subscribe(
@@ -78,32 +98,47 @@ export class TacheService {
     );
   }
 
-  onPrioriteChange(p: Priorite[]): void {
+  private sauvegarder(): void {
+    let chemin = "http://localhost:25565/datas/";
 
+    chemin += this.getFileName(this.activeTheme);
 
-    //On a juste à filtrer directement sur la liste de tache visible
-    this.lesTaches = this.tachesOrigin;
+    console.log(chemin);
 
-    p.forEach(prio => {
-      this.lesTaches = this.tachesOrigin.filter(tache => {
-        let res: Boolean = false;
-        p.forEach(prio => {
-          if(tache.priorite === prio)
-            res = true;
-        });
-        return res;
-        }
-      );
-    });
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-
-    this.tachesSubject.next(this.lesTaches);
-
-  }
-
-  onSelectTache(tache: Tache) : void {
+    console.log(headers);
     
-    //On emet à tous les abonné la tache selectionnée (doit être capturé par le component Detail-Tache)
-    this.selectedTacheSubject.next(tache);
+    this.http.post<any>(chemin, this.tachesOrigin, { headers }).subscribe(
+      response => {
+        const statusCode = response.status;
+        console.log('Code de statut:', response);
+  
+        if (statusCode === 200) {
+          console.log('Succès de la sauvegarde');
+        }
+      }
+      );
+    
+  }
+  
+  getFileName(theme: Theme): string {
+    switch (theme) {
+      case Theme.GESTIONPERSO:
+        return "gestionperso.json";
+      case Theme.PRO:
+        return "travailperso.json";
+      case Theme.ETUDES:
+        return "etudes.json";
+      case Theme.GESTIONPROJET:
+        return "gestionprojet.json";
+      case Theme.SANTE:
+        return "sante.json";
+      case Theme.ORGANISATION:
+        return "organisation.json";
+      case Theme.TACHESDOMESTIQUE:
+        return "tachesdomestiques.json";
+    }
+    return '';
   }
 }
