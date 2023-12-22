@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
+import { Tache } from 'src/app/shared/models/tache';
+import { TacheService } from 'src/app/shared/services/tache/tache.service';
 
 @Component({
   selector: 'app-modification-tache',
@@ -9,24 +11,58 @@ import { FormControl } from '@angular/forms';
 })
 export class ModificationTacheComponent {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private tacheServ: TacheService) {}
 
-  dateControl = new FormControl(); //FormControl pour suivre la date
+  @Input() public _tache!: Tache;
+
+  nomTache: string = ''; // Nom de la tâche
+  selectedDate: string = ''; //Pour la date
+  descriptionTache: string = ''; // Description de la tâche
+  selectedPriority: number = -1; // État initial pour la sélection de priorité
+  selectedEtat: number = -1; // État initial pour la sélection d'état en radio bouton
+
+  ngOnInit(): void {
+    //Initialiser les valeurs des champs html avec les valeurs de la tâche
+    this.selectButton(this._tache.priorite);
+    this.selectEtat(this._tache.etat);
+  }
+
+  //Valider la modification
+  onSubmit() {
+    if(this.verificateur()) {
+      const resDate = new Date(this.selectedDate);
+      let tache = new Tache(this.nomTache, resDate, this._tache.dateCreation, this.descriptionTache, this.selectedPriority, this.selectedEtat);
+      
+      //sauvegarder la modif de tâche sur le serveur
+      //this.tacheServ.addTache(tache);
+
+      this.router.navigate(['/']);
+    }
+  }
+
+  selectButton(n: number) {
+    this.selectedPriority = n;
+  }
+
+  // Etats
+  selectEtat(n: number): void {
+    this.selectedEtat = n;
+  }
+
+  verificateur() {
+    //Vérifier que les champs ne sont pas vides
+    if (this.nomTache == '' || this.selectedDate == '' 
+    || this.descriptionTache == '' 
+    || this.selectedPriority == -1 || this.selectedEtat == -1) {
+      return false;
+    }
+    const dateTmp = new Date(this.selectedDate);
+    return dateTmp > new Date();
+  }
 
   // Fermer la popup
   closePopup() {
     this.router.navigate(['/']); 
-  }
-
-  //Valider la modification
-  submit() {
-    const selectedDate = this.dateControl.value; // Récupérer la date
-   /* const date = new Date(selectedDate); // Convertir la date en objet Date
-    const day = date.getDate(); // Récupérer le jour
-    const month = date.getMonth() + 1; // Récupérer le mois
-    const year = date.getFullYear(); // Récupérer l'année
-  */
-    // Logique pour mettre à jour la tâche ET l'affichage
   }
 
 }

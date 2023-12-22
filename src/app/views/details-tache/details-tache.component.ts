@@ -84,5 +84,6 @@ export class DetailsTacheComponent implements AfterViewInit {
   suppTache(): void {
     if(this.tache != null && this.tache != undefined)
       this.tacheService.suppTache(this.tache);
+      this.tache = null; // Affectez null pour masquer la div
   }
 }

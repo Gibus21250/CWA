@@ -13,8 +13,7 @@ export class CreationTacheComponent {
 
   constructor(private router: Router, private tacheServ: TacheService) {
   }
-
-  //tache: Tache = new Tache('', new Date(), new Date(), '', 0, 'aFaire'); // Tâche à créer
+  
   nomTache: string = ''; // Nom de la tâche
   selectedDate: string = ''; //FormControl pour la date
   description: string = ''; // Description de la tâche
@@ -22,10 +21,7 @@ export class CreationTacheComponent {
   selectedEtat: number = -1; // État initial pour la sélection d'état en radio bouton
 
   onSubmit() {
-
-    
     if(this.verificateur()) {
-      
       const resDate = new Date(this.selectedDate);
       let tache = new Tache(this.nomTache, resDate, new Date(), this.description, this.selectedPriority, this.selectedEtat);
       //sauvegarder la nouvelle tâche sur le serveur
