@@ -36,15 +36,15 @@
       <label for="priorite">État :</label>
       <!--A refaire-->
       <label>
-        <input type="radio" [class.selected]="selectedEtat === 'aFaire'" (click)="selectEtat('aFaire')" (select)=true> À faire
+        <input type="radio" [class.selected]="selectedEtat === 0" (click)="selectEtat(0)" (select)=true> À faire
       </label>
       
       <label>
-        <input type="radio" [class.selected]="selectedEtat === 'enCours'" (click)="selectEtat('enCours')"> En cours
+        <input type="radio" [class.selected]="selectedEtat === 1" (click)="selectEtat(1)"> En cours
       </label>
       
       <label>
-        <input type="radio" [class.selected]="selectedEtat === 'termine'" (click)="selectEtat('termine')"> Terminé
+        <input type="radio" [class.selected]="selectedEtat === 2" (click)="selectEtat(2)"> Terminé
       </label>
 
 
