@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FiltreInfos, Filtre } from "src/app/shared/enums/filtre";
+import { TriInfos, Tri } from "src/app/shared/enums/tris";
 import { EtatInfos, Etat } from "src/app/shared/enums/etat";
 import { ThemeInfos, Theme } from "src/app/shared/enums/theme";
 import { TacheService } from 'src/app/shared/services/tache/tache.service';
@@ -13,8 +13,8 @@ import { TacheService } from 'src/app/shared/services/tache/tache.service';
 export class FiltreTacheComponent {
 
   //Données dynamique pour la liste de filtre
-  filtres = Object.values(Filtre).filter(value => typeof value === 'number');
-  FiltreInfos = FiltreInfos;
+  tris = Object.values(Tri).filter(value => typeof value === 'number');
+  TriInfos = TriInfos;
 
   etats = Object.values(Etat).filter(value => typeof value === 'number')
   EtatInfos = EtatInfos;
@@ -25,24 +25,15 @@ export class FiltreTacheComponent {
   /**
    *
    */
-  constructor(private tacheService: TacheService) {
+  constructor(private tacheService: TacheService) {}
 
-  }
-
-  onTrierChange(event: any) : void {
-    
-  }
-
-  onFiltrerChange(event: any) : void {
-    
-  }
 
   onThemeChange(theme: Theme) : void {
     //Ajouter les changement CSS
     this.tacheService.onThemeChange(theme);
   }
 
-  isFiltre(value: any): value is Filtre {
+  isFiltre(value: any): value is Tri {
     return typeof value === 'number';
   }
 

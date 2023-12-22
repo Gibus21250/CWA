@@ -34,7 +34,7 @@ export class TacheService {
       case Theme.GESTIONPERSO:
         chemin += "gestionperso.json";
         break;
-      case Theme.TRAVAILPERSO:
+      case Theme.PRO:
         chemin += "travailperso.json";
         break;
       case Theme.ETUDES:
@@ -76,6 +76,29 @@ export class TacheService {
         this.tachesSubject.next(this.lesTaches);
       }
     );
+  }
+
+  onPrioriteChange(p: Priorite[]): void {
+
+
+    //On a juste à filtrer directement sur la liste de tache visible
+    this.lesTaches = this.tachesOrigin;
+
+    p.forEach(prio => {
+      this.lesTaches = this.tachesOrigin.filter(tache => {
+        let res: Boolean = false;
+        p.forEach(prio => {
+          if(tache.priorite === prio)
+            res = true;
+        });
+        return res;
+        }
+      );
+    });
+
+
+    this.tachesSubject.next(this.lesTaches);
+
   }
 
   onSelectTache(tache: Tache) : void {

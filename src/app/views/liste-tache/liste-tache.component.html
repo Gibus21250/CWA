@@ -1,12 +1,12 @@
 <div id="haut">
     <div class="btnRond">
-        <button class="btnVert" type="button"></button>
-        <button class="btnBlanc" type="button"></button>
-        <button class="btnJaune" type="button"></button>
-        <button class="btnRouge" type="button"></button>
-        <button class="btnViolet" type="button"></button>
+        <button class="btnVert" type="button" (click)="onPriorityChange(0)"></button>
+        <button class="btnBlanc" type="button" (click)="onPriorityChange(1)"></button>
+        <button class="btnJaune" type="button" (click)="onPriorityChange(2)"></button>
+        <button class="btnRouge" type="button" (click)="onPriorityChange(3)"></button>
+        <button class="btnViolet" type="button" (click)="onPriorityChange(4)"></button>
     </div>
-    <button class="btnFilter" type="button"> <img src="../../assets/icones/entonoir.png" alt="image de fond"></button>
+    <button class="btnFilter" type="button"> <img src="assets/icones/entonoir.png" alt="image de fond"></button>
 </div>
 
 <ul id="listeTache">

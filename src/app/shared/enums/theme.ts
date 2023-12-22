@@ -1,6 +1,6 @@
 export enum Theme {
     GESTIONPERSO,
-    TRAVAILPERSO,
+    PRO,
     ETUDES,
     GESTIONPROJET,
     SANTE,
@@ -10,7 +10,7 @@ export enum Theme {
 
 export const ThemeInfos: {[key in Theme]: string} = {
     [Theme.GESTIONPERSO]: 'Gestion personelle',
-    [Theme.TRAVAILPERSO]: 'Travail professionnel',
+    [Theme.PRO]: 'Travail professionnel',
     [Theme.ETUDES]: 'Éducation et études',
     [Theme.GESTIONPROJET]: 'Gestion de projet',
     [Theme.SANTE]: 'Santé et bien-être',
