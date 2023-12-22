@@ -3,6 +3,8 @@ import { BehaviorSubject } from 'rxjs';
 import { Tache } from '../../models/tache';
 import { Priorite } from '../../enums/priorite';
 import { Etat } from '../../enums/etat';
+import { Theme } from '../../enums/theme';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -19,30 +21,61 @@ export class TacheService {
   public taches$ = this.tachesSubject.asObservable();
   public selectedTache$ = this.selectedTacheSubject.asObservable();
 
-  constructor() { 
-    this.loadTache()
+  private tachesOrigin: Tache[] = [];
+  public lesTaches: Tache[] = [];
+
+  constructor(private http: HttpClient) {
   }
 
-  private loadTache() {
-    const lTaches: Tache[] = [
-      new Tache("Noël", new Date(2023, 11, 24), "Premiere tache", Priorite.BASSE, Etat.EN_ATTENTE),
-      new Tache("Ce soir", new Date(2023, 11, 8, 20, 0, 0), "Premiere tache", Priorite.PRIORITAIRE, Etat.EN_ATTENTE),
-      new Tache("Noël", new Date(2023, 11, 24), "Premiere tache", Priorite.NORMALE, Etat.EN_ATTENTE),
-      new Tache("Ce soir", new Date(2023, 11, 8, 20, 0, 0), "Premiere tache", Priorite.ELEVEE, Etat.EN_ATTENTE),
-      new Tache("Noël", new Date(2023, 11, 24), "Premiere tache", Priorite.NORMALE, Etat.EN_ATTENTE),
-      new Tache("Ce soir", new Date(2023, 11, 8, 20, 0, 0), "Premiere tache", Priorite.NORMALE, Etat.EN_ATTENTE),
-      new Tache("Noël", new Date(2023, 11, 24), "Premiere tache", Priorite.NORMALE, Etat.EN_ATTENTE),
-      new Tache("Ce soir", new Date(2023, 11, 8, 20, 0, 0), "Premiere tache", Priorite.BASSE, Etat.EN_ATTENTE),
-      new Tache("Noël", new Date(2023, 11, 24), "Premiere tache", Priorite.NORMALE, Etat.EN_ATTENTE),
-      new Tache("Ce soir", new Date(2023, 11, 8, 20, 0, 0), "Premiere tache", Priorite.NORMALE, Etat.EN_ATTENTE),
-      new Tache("Noël", new Date(2023, 11, 24), "Premiere tache", Priorite.CRITIQUE, Etat.EN_ATTENTE),
-      new Tache("Ce soir", new Date(2023, 11, 8, 20, 0, 0), "Premiere tache", Priorite.NORMALE, Etat.EN_ATTENTE),
-      new Tache("Noël", new Date(2023, 11, 24), "Premiere tache", Priorite.NORMALE, Etat.EN_ATTENTE),
-      new Tache("Ce soir", new Date(2023, 11, 8, 20, 0, 0), "Premiere tache", Priorite.NORMALE, Etat.EN_ATTENTE)
-    ];
+  onThemeChange(theme: Theme) : void {
+    let lTaches: Tache[] = [];
+    let chemin = "http://localhost:3000/datas/";
+    switch (theme) {
+      case Theme.GESTIONPERSO:
+        chemin += "gestionperso.json";
+        break;
+      case Theme.TRAVAILPERSO:
+        chemin += "travailperso.json";
+        break;
+      case Theme.ETUDES:
+        chemin += "etudes.json";
+        break;
+      case Theme.GESTIONPROJET:
+        chemin += "gestionprojet.json";
+        break;
+      case Theme.SANTE:
+        chemin += "sante.json";
+        break;
+      case Theme.ORGANISATION:
+        chemin += "organisation.json";
+        break;
+      case Theme.TACHESDOMESTIQUE:
+        chemin += "tachesdomestiques.json";
+        break;
+    }
 
-    //On emets toutes les taches aux abonnés
-    this.tachesSubject.next(lTaches);
+    //Charger les données depuis le json
+    this.http.get<Tache[]>(chemin).subscribe(
+      (jsonData) => {
+      
+        const lTaches: Tache[] = jsonData.map((tache: any) => {
+          return new Tache(
+            tache._intitule,
+            new Date(tache._dateEcheance),
+            new Date(tache._dateCreation),
+            tache._description,
+            tache._priorite,
+            tache._etat
+          );
+        });
+
+        this.lesTaches = lTaches;
+        this.tachesOrigin = lTaches;
+        
+        //On emets toutes les taches aux abonnés
+        this.tachesSubject.next(this.lesTaches);
+      }
+    );
   }
 
   onSelectTache(tache: Tache) : void {

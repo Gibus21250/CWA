@@ -12,6 +12,7 @@ import { FiltreTacheComponent } from './views/filtre-tache/filtre-tache.componen
 import { ListeTacheComponent } from './views/liste-tache/liste-tache.component';
 import { TacheItemDirective } from './shared/directives/tache-item/tache-item.directive';
 import { TacheItemComponent } from './views/tache-item/tache-item.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { TacheItemComponent } from './views/tache-item/tache-item.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [
     DatePipe
