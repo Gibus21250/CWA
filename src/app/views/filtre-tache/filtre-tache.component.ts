@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { FiltreInfos, Filtre } from "src/app/shared/enums/filtre";
 import { EtatInfos, Etat } from "src/app/shared/enums/etat";
 import { ThemeInfos, Theme } from "src/app/shared/enums/theme";
+import { TacheService } from 'src/app/shared/services/tache/tache.service';
 
 @Component({
   selector: 'app-filtre-tache',
   templateUrl: './filtre-tache.component.html',
   styleUrls: ['./filtre-tache.component.css']
 })
+
 export class FiltreTacheComponent {
 
   //Données dynamique pour la liste de filtre
@@ -20,25 +22,24 @@ export class FiltreTacheComponent {
   themes = Object.values(Theme).filter(value => typeof value === 'number')
   ThemesInfo = ThemeInfos;
 
+  /**
+   *
+   */
+  constructor(private tacheService: TacheService) {
+
+  }
+
   onTrierChange(event: any) : void {
-    let trie = event.target.value;
     
-    switch (trie) {
-      case Filtre.NONE:
-        
-        break;
-    
-      default:
-        break;
-    }
   }
 
   onFiltrerChange(event: any) : void {
     
   }
 
-  onThemeChange(event: any) : void {
-    
+  onThemeChange(theme: Theme) : void {
+    //Ajouter les changement CSS
+    this.tacheService.onThemeChange(theme);
   }
 
   isFiltre(value: any): value is Filtre {
