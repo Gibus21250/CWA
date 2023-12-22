@@ -30,6 +30,11 @@
     color: rgb(0, 136, 255);
 }
 
+.contentTheme{
+    width: 100%;
+    align-items: center;
+}
+
 .divTheme{
     border-radius: 10px;
     border-color: rgba(255, 255, 255, 0.14);
@@ -39,17 +44,21 @@
     flex: 1;
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.162), rgba(205, 205, 205, 0.083));
     backdrop-filter: blur(10px);
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin-top: 40%;
+    margin-bottom: 40%;
+    display: flex;
+    align-items: center;
+    width: 90%;
 }
 
 .divTheme button{
     width: 100%;
     min-width: 40px;
-    height: 100%;
+    height: auto;
     min-height: 40px;
     background-color: rgba(168, 168, 168, 0);
     border: none;
+    cursor: pointer;
 }
 
 .divTheme button img{

@@ -20,7 +20,7 @@ img.background{
 
 #page_content{
   display: grid;
-  grid-template-columns: 6% 30% auto;
+  grid-template-columns: 8% 30% auto;
   grid-gap :10px;
   grid-auto-rows: minmax(100px,auto);
   width: 100%;
@@ -104,6 +104,4 @@ img.background{
 
 #content{
   text-align: justify;
-  overflow:scroll;
-  
 }
