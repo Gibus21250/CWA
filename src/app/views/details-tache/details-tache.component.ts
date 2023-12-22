@@ -63,7 +63,7 @@ export class DetailsTacheComponent implements AfterViewInit {
         if (tempsRestant > 0) {
           const tempsTotal = this.tache.dateEcheance.getTime() - this.tache.dateCreation.getTime();
           const tempsPasse = tempsTotal - tempsRestant;
-          
+
           const res = (tempsPasse / tempsTotal) * 100;
           
           let strres = res + '%'
@@ -79,5 +79,10 @@ export class DetailsTacheComponent implements AfterViewInit {
   // Méthode pour afficher la popup de modification
   showPopupM() {
     this.router.navigate(['/modificationPopup']);
+  }
+
+  suppTache(): void {
+    if(this.tache != null && this.tache != undefined)
+      this.tacheService.suppTache(this.tache);
   }
 }

@@ -1,6 +1,6 @@
-import { DatePipe } from '@angular/common';
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Tache } from 'src/app/shared/models/tache';
+import { TacheService } from 'src/app/shared/services/tache/tache.service';
 
 @Component({
   selector: 'app-tache-item',
@@ -14,7 +14,7 @@ export class TacheItemComponent implements OnInit {
   @Input()
   public _tache!: Tache;
 
-  constructor() {
+  constructor(private tacheService: TacheService) {
   }
 
   ngOnInit(): void {
@@ -36,8 +36,6 @@ export class TacheItemComponent implements OnInit {
       }else {
         this._formateEcheanceDate = 'Passé'
       }
-      
-        
     }
   }
 

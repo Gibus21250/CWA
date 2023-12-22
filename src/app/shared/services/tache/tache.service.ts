@@ -63,9 +63,19 @@ export class TacheService {
   addTache(tache: Tache): void {
     this.tachesOrigin.push(tache);
     
-    this.lesTaches = this.tachesOrigin;
+    this.lesTaches = [...this.tachesOrigin];
     this.tachesSubject.next(this.lesTaches);
     this.sauvegarder();
+  }
+
+  suppTache(tache: Tache): void {
+    const ind = this.tachesOrigin.indexOf(tache);
+
+    this.tachesOrigin.splice(ind, 1);
+    this.lesTaches = [...this.tachesOrigin];
+
+    this.sauvegarder();
+    this.tachesSubject.next(this.lesTaches);
   }
 
   private chargerDonnee(): void {
@@ -90,7 +100,7 @@ export class TacheService {
         });
 
         this.lesTaches = lTaches;
-        this.tachesOrigin = lTaches;
+        this.tachesOrigin = [...lTaches];
         
         //On emets toutes les taches aux abonnés
         this.tachesSubject.next(this.lesTaches);
@@ -103,11 +113,7 @@ export class TacheService {
 
     chemin += this.getFileName(this.activeTheme);
 
-    console.log(chemin);
-
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-
-    console.log(headers);
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json'});
     
     this.http.post<any>(chemin, this.tachesOrigin, { headers }).subscribe(
       response => {
