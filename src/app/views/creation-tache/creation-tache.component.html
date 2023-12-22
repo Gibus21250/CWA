@@ -2,57 +2,60 @@
     <!-- Contenu de votre popup -->
 
     <h1>Nouvelle tâche</h1>
-    <form>
+    <form (ngSubmit)="onSubmit()">
       
       <label for="nom">Nom : </label>
-      <input class="inputNom" type="text" id="nom" name="nom" required>
+      <input class="inputNom" type="text" id="nom" name="nom" [(ngModel)]="nomTache" required>
 
       <br>
 
       <label for="dateEcheance">Date d'échéance :</label>
-      <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Choisir une date">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
+      <input type="datetime-local" id="dateEcheance" name="dateEcheance" min="2018-01-01" [(ngModel)]="selectedDate" required/>
 
       <br>
-      
-      <textarea type="textarea" class="textarea" placeholder="Description"></textarea>
+
+      <label for="description">Description :</label>
+      <textarea type="textarea" id="description" name="description" class="textarea" placeholder="Description" [(ngModel)]="description" required></textarea>
 
       <br>
 
       <label for="priorite">Priorité :</label>
       <div class="btnRond">
-        <button class="btnVert" [class.selected]="selectedButton === 0" (click)="selectButton(0)"></button>
-        <button class="btnBlanc" [class.selected]="selectedButton === 1" (click)="selectButton(1)"></button>
-        <button class="btnJaune" [class.selected]="selectedButton === 2" (click)="selectButton(2)"></button>
-        <button class="btnRouge" [class.selected]="selectedButton === 3" (click)="selectButton(3)"></button>
-        <button class="btnViolet" [class.selected]="selectedButton === 4" (click)="selectButton(4)"></button>
+        <input type="button" class="btnVert" [class.selected]="selectedPriority === 0" (click)="selectButton(0)"/>
+        <input type="button" class="btnBlanc" [class.selected]="selectedPriority === 1" (click)="selectButton(1)"/>
+        <input type="button" class="btnJaune" [class.selected]="selectedPriority === 2" (click)="selectButton(2)"/>
+        <input type="button" class="btnRouge" [class.selected]="selectedPriority === 3" (click)="selectButton(3)"/>
+        <input type="button" class="btnViolet" [class.selected]="selectedPriority === 4" (click)="selectButton(4)"/>
       </div>
 
       <br>
 
-      <label for="priorite">État :</label>
+      <label for="etat">État :</label>
+
       <!--A refaire-->
-      <label>
-        <input type="radio" [class.selected]="selectedEtat === 0" (click)="selectEtat(0)" (select)=true> À faire
-      </label>
-      
-      <label>
-        <input type="radio" [class.selected]="selectedEtat === 1" (click)="selectEtat(1)"> En cours
-      </label>
-      
-      <label>
-        <input type="radio" [class.selected]="selectedEtat === 2" (click)="selectEtat(2)"> Terminé
-      </label>
+      <div>
+        <input id="etat0" type="radio" name="retat" [class.selected]="selectedEtat === 0" (click)="selectEtat(0)"/>
+        <label for="etat0">À faire</label>
+      </div>
 
+      <div>
+        <input id="etat1" type="radio" name="retat" [class.selected]="selectedEtat === 1" (click)="selectEtat(1)"/>
+        <label for="etat1">En cours</label>
+      </div>
 
+      <div>
+        <input id="etat2" type="radio" name="retat" [class.selected]="selectedEtat === 2" (click)="selectEtat(2)"/>
+        <label for="etat2">Terminé</label>
+      </div>
+      
+      
+
+      <div class="popup-buttons">
+        <button class="btnPopA" (click)="closePopup()">Annuler</button>
+        <button type="submit" class="btnPopV">Valider</button>
+      </div>
     </form>
 
-    <div class="popup-buttons">
-      <button class="btnPopA" (click)="closePopup()">Annuler</button>
-      <button class="btnPopV" (click)="submit()">Valider</button>
-    </div>
+    
 
   </div>

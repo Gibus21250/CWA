@@ -1,7 +1,8 @@
+import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormControl } from '@angular/forms';
 import { Tache } from 'src/app/shared/models/tache';
+import { TacheService } from 'src/app/shared/services/tache/tache.service';
 
 @Component({
   selector: 'app-creation-tache',
@@ -10,74 +11,52 @@ import { Tache } from 'src/app/shared/models/tache';
 })
 export class CreationTacheComponent {
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private tacheServ: TacheService) {
   }
 
   //tache: Tache = new Tache('', new Date(), new Date(), '', 0, 'aFaire'); // Tâche à créer
   nomTache: string = ''; // Nom de la tâche
-  selectedDate = new FormControl(); //FormControl pour la date
+  selectedDate: string = ''; //FormControl pour la date
   description: string = ''; // Description de la tâche
-  selectedButton: number | null = null; // État initial pour la sélection de priorité
-  selectedEtat: number = 0; // État initial pour la sélection d'état en radio bouton
-  etats: string[] = ['A faire', 'En cours', 'Terminée']; // Liste des états
-  etatTache: string = 'A faire'; // État de la tâche
+  selectedPriority: number = -1; // État initial pour la sélection de priorité
+  selectedEtat: number = -1; // État initial pour la sélection d'état en radio bouton
 
-  // Priorités
-  selectButton(buttonNumber: number): void {
-    this.selectedButton = buttonNumber;
+  onSubmit() {
+
+    
+    if(this.verificateur()) {
+      
+      const resDate = new Date(this.selectedDate);
+      let tache = new Tache(this.nomTache, resDate, new Date(), this.description, this.selectedPriority, this.selectedEtat);
+      //sauvegarder la nouvelle tâche sur le serveur
+      this.tacheServ.addTache(tache);
+      this.router.navigate(['/']);
+    }
+  }
+
+  selectButton(n: number) {
+    this.selectedPriority = n;
   }
 
   // Etats
-  selectEtat(selectedEtatProv: number): void {
-    this.etatTache = this.etats[selectedEtatProv];
+  selectEtat(n: number): void {
+    this.selectedEtat = n;
   }
 
   // Fermer la popup
   closePopup() {
-    this.router.navigate(['/']); 
+    this.router.navigate(['/']);
   }
 
-  verificateur(nomTache: string, dateControl: FormControl, description: string, selectedButton: number | null) {
+  verificateur() {
     //Vérifier que les champs ne sont pas vides
-    if (nomTache == '' || dateControl == null || description == '' || selectedButton == null) {
+    if (this.nomTache == '' || this.selectedDate == '' 
+    || this.description == '' 
+    || this.selectedPriority == -1 || this.selectedEtat == -1) {
       return false;
     }
-    else {
-      //vérifier que la date ne soit pas dépassée
-      const date = new Date();
-      const dateNow = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-      const dateSelected = dateControl.value;
-      if (dateSelected < dateNow) {
-        return false;
-      }
-      return true;
-    }
-  }
-
-  //Valider la création de tâche
-  submit() {
-    //TESTS
-    alert('Nom de la tâche : ' + this.nomTache+' /n Date : ' + this.selectedDate+'/nDescription : ' + this.description+'/nPriorité : ' + this.selectedButton+'/nEtat : ' + this.etatTache);
-
-    
-    //Vérifier les données
-    if(this.verificateur(this.nomTache, this.selectedDate, this.description, this.selectedButton)) {
-      //Si les données sont valides, on instancie la tâche
-      //this.creationTache(this.nomTache, this.selectedDate, this.description, this.selectedButton, this.etatTache);
-
-      //Ajouter la tâche dans la liste de tâches
-      //this.addTache(this.tache);
-
-      //On affiche un message de confirmation
-      alert('Tâche créée avec succès !');
-
-      //On ferme la popup
-      this.closePopup();
-    }
-    else {
-      //Sinon, on affiche un message d'erreur
-      alert('Veuillez remplir tous les champs.');
-    }
+    const dateTmp = new Date(this.selectedDate);
+    return dateTmp > new Date();
   }
 
 }
