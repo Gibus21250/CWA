@@ -3,6 +3,7 @@ import { TriInfos, Tri } from "src/app/shared/enums/tris";
 import { EtatInfos, Etat } from "src/app/shared/enums/etat";
 import { ThemeInfos, Theme } from "src/app/shared/enums/theme";
 import { TacheService } from 'src/app/shared/services/tache/tache.service';
+import { Tache } from 'src/app/shared/models/tache'
 
 @Component({
   selector: 'app-filtre-tache',
@@ -25,11 +26,43 @@ export class FiltreTacheComponent {
   /**
    *
    */
-  constructor(private tacheService: TacheService) {}
+  constructor(private tacheService: TacheService) { }
 
+  onThemeChange(theme: Theme): void {
 
-  onThemeChange(theme: Theme) : void {
-    //Ajouter les changement CSS
+    const doc = document;
+    let monElement:  HTMLImageElement | null = null;
+    switch (theme) {
+      case 0:
+        monElement = doc.getElementById('background') as  HTMLImageElement;
+        monElement.src = "assets/images/personnelleF.jpg";
+        break;
+      case 1:
+        monElement = doc.getElementById('background') as  HTMLImageElement;
+        monElement.src = "assets/images/travailF.jpg";
+        break;
+      case 2:
+        monElement = doc.getElementById('background') as  HTMLImageElement;
+        monElement.src = "assets/images/etudeF.jpg";
+        break;
+      case 3:
+        monElement = doc.getElementById('background') as  HTMLImageElement;
+        monElement.src = "assets/images/gestionF.jpg";
+        break;
+      case 4:
+        monElement = doc.getElementById('background') as  HTMLImageElement;
+        monElement.src = "assets/images/santeF.jpg";
+        break;
+      case 5:
+        monElement = doc.getElementById('background') as  HTMLImageElement;
+        monElement.src = "assets/images/organisationF.jpg";
+        break;
+      case 6:
+        monElement = doc.getElementById('background') as  HTMLImageElement;
+        monElement.src = "assets/images/domestiqueF.jpg";
+        break;
+    }
+
     this.tacheService.onThemeChange(theme);
   }
 

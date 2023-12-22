@@ -1,3 +1,12 @@
+#container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(50px);
+    z-index: 7;
+    top:0%;
+}
+
 .popup-container {
     font-family: Roboto Mono, sans-serif;
 
@@ -16,7 +25,7 @@
     border-width: 2px;
     box-shadow: inset 0 0 1em rgba(168, 168, 168, 0.478);
     flex: 1;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.162), rgba(205, 205, 205, 0.083));
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(205, 205, 205, 0.4));
     backdrop-filter: blur(10px);
     margin: 10px;
 }
@@ -154,26 +163,26 @@
 
 .btnRond input[type=button].selected.btnVert {
     background-color: #64a87190;
-    border: solid 5px #64a87190;
+    border: solid 5px #64a87100;
 }
 
 .btnRond input[type=button].selected.btnBlanc {
     background-color: #ffffff90;
-    border: solid 5px#ffffff90;
+    border: solid 5px#ffffff00;
 }
 
 .btnRond input[type=button].selected.btnJaune {
     background-color: #ffc65490;
-    border: solid 5px #ffc65490;
+    border: solid 5px #ffc65400;
 }
 
 .btnRond input[type=button].selected.btnRouge {
     background-color: #ff613e90;
-    border: 5px solid #ff613e90;
+    border: 5px solid #ff613e00;
 }
 
 .btnRond input[type=button].selected.btnViolet {
     background-color: #5c376d90;
-    border: 5px solid #5c376d90;
+    border: 5px solid #5c376d00;
 }
 
