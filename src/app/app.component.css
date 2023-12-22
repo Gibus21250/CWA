@@ -1,3 +1,5 @@
 body {
     overflow: hidden;
+    font-family: Roboto Mono, sans-serif;
+    color: rgb(56, 49, 75);
 }
