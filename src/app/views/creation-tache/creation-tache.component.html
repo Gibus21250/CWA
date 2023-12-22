@@ -11,16 +11,15 @@
           <input class="inputNom" type="text" id="nom" name="nom" required>
       </div>
 
-      <br>
-
+      <div>
       <label for="dateEcheance">Date d'échéance :</label>
-      <mat-form-field>
+      <mat-form-field class="dateField">
         <input matInput [matDatepicker]="picker" placeholder="Choisir une date">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
+      </div>
 
-      <br>
       <div>
         <label for="dateEcheance">Date d'échéance :</label>
       <!-- Insérer pour la date-->
