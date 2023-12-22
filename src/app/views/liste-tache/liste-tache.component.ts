@@ -4,6 +4,7 @@ import { Priorite } from 'src/app/shared/enums/priorite';
 import { Tache } from 'src/app/shared/models/tache';
 import { TacheService } from 'src/app/shared/services/tache/tache.service';
 import { Router } from '@angular/router';
+import { Theme } from 'src/app/shared/enums/theme';
 
 @Component({
   selector: 'app-liste-tache',
@@ -13,17 +14,19 @@ import { Router } from '@angular/router';
 
 export class ListeTacheComponent implements OnInit {
 
-  constructor(private tacheServ: TacheService,private router: Router) {
-  }
-
   listeTache: Tache[] = [];
 
+  constructor(private tacheServ: TacheService,private router: Router) {
+  }
 
   ngOnInit(): void {
     //On abonne le component au service de la liste des tâches
     this.tacheServ.taches$.subscribe((taches: Tache[]) => {
       this.listeTache = taches;
-    })
+    });
+
+    //On charge le thme par default (Gestion perso)
+    this.tacheServ.onThemeChange(Theme.GESTIONPERSO);
   }
 
   public tacheSelectionne(tache: Tache) {
