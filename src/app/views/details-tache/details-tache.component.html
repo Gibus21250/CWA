@@ -1,32 +1,23 @@
 <div id="dt-outside">
     <!-- Affichage uniquement si une tache a été selectionnée/cliquée-->
-    <table *ngIf="tache" class="content_table">
+    <div *ngIf="tache" class="content_table">
         <!-- affichage des détails-->
-        <tr>
-            <th>{{tache.intitule}}</th>
-        </tr>
-        <tr>
-            <td class="datecrea">{{dateCreatStr}}</td>
-            <td class="datefin">{{dateEcheanceStr}}</td>
-        </tr>
-        <tr>
-            
-        </tr>
-        <tr>
-            <td>Description: {{tache.description}}</td>
-        </tr>
-        <tr>
-            <td>Priorité: {{prioriteStr}}</td>
-        </tr>
-        <tr>
-            <td>Etat: {{etatStr}}</td>
-        </tr>
+        <h1>{{tache.intitule}}</h1>
+        <div class="maxprogressbar">
+            <div class="progressbar"></div>
+        </div>
+        <div>
+            <div class="datecrea">{{dateCreatStr}}</div>
+            <div class="datefin">{{dateEcheanceStr}}</div>
+        </div>
+        <div class="descr">{{tache.description}}</div>
+        <div>Priorité: {{prioriteStr}}</div>
+        <div>Etat: {{etatStr}}</div>
         
-        <tr>
-            <td><button type="button" class="btnModif" (click)="showPopupM()">Modifier</button></td>
-            <td><button type="button" class="btnSuppr">Supprimer</button></td>
-        </tr>    
-    </table>
+        <div class="buttontr">
+            <button type="button" class="btnModif" (click)="showPopupM()">Modifier</button>
+            <button type="button" class="btnSuppr">Supprimer</button>
+        </div>    
+    </div>
 
-    
 </div>
