@@ -21,7 +21,6 @@ export class TacheItemComponent implements OnInit {
     if (this._tache.dateEcheance) {
       const now = new Date();
       const timeDifference = this._tache.dateEcheance.getTime() - now.getTime();
-
       
       //On récupère le nombre de jours
       const daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));

@@ -45,6 +45,4 @@ export class DetailsTacheComponent {
   showPopupM() {
     this.router.navigate(['/modificationPopup']);
   }
-
-
 }
