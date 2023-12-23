@@ -117,7 +117,8 @@
 }
 
 .descr{
+  text-align: justify;
   height: 100%;
-  font-size: 30px;
+  font-size: 20px;
   overflow-y: needed ;
 }
