@@ -79,6 +79,21 @@ export class TacheService {
     this.tachesSubject.next(this.lesTaches);
   }
 
+  replaceTache(origin: Tache, nouv: Tache): void {
+    const ind = this.tachesOrigin.findIndex(tache => {
+      return tache.intitule === origin.intitule 
+      && tache.description === origin.description
+      && tache.etat === origin.etat
+      && tache.priorite === origin.priorite
+    });
+    
+    this.tachesOrigin[ind] = nouv;
+    this.lesTaches = [...this.tachesOrigin];
+
+    this.sauvegarder();
+    this.tachesSubject.next(this.lesTaches);
+  }
+
   private chargerDonnee(): void {
 
     let chemin = "http://localhost:25565/datas/";
@@ -119,7 +134,6 @@ export class TacheService {
     this.http.post<any>(chemin, this.tachesOrigin, { headers }).subscribe(
       response => {
         const statusCode = response.status;
-        console.log('Code de statut:', response);
   
         if (statusCode === 200) {
           console.log('Succès de la sauvegarde');
