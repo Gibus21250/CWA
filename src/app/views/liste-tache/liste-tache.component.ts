@@ -34,7 +34,6 @@ export class ListeTacheComponent implements OnInit {
 
   private resetFiltre(): void {
     this.listePrioSelected = [true, true, true, true, true];
-
     this.updateBoutonAffichage();
   }
 

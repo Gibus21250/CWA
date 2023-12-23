@@ -50,7 +50,6 @@ export class DetailsTacheComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     //Actualisation de la prgress barre
     const element = this.el.nativeElement.querySelector('.progressbar');
-    console.log(element);
 
     if (element) {
       //On calcule le pourcentage restant entre DC et DE par rapport à date d'aujourd'hui
@@ -78,12 +77,16 @@ export class DetailsTacheComponent implements AfterViewInit {
 
   // Méthode pour afficher la popup de modification
   showPopupM() {
-    this.router.navigate(['/modificationPopup']);
+    if(this.tache != undefined)
+      this.router.navigate(['/modificationPopup'], {state: {laTache: this.tache}});
+
+    this.tache = null;
   }
 
   suppTache(): void {
     if(this.tache != null && this.tache != undefined)
       this.tacheService.suppTache(this.tache);
-      this.tache = null; // Affectez null pour masquer la div
+    
+    this.tache = null; // Affectez null pour masquer la div
   }
 }
