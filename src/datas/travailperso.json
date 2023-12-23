@@ -4,15 +4,55 @@
         "_dateCreation": "2023-12-22T13:44:12.582Z",
         "_dateEcheance": "2023-12-23T23:00:00.000Z",
         "_description": "Ranger/trier mes photos personnelles",
-        "_priorite": 2,
-        "_etat": 1
+        "_priorite": 1,
+        "_etat": 0
     },
     {
         "_intitule": "Emballer cadeaux pour Christine",
         "_dateCreation": "2023-12-22T13:44:12.582Z",
         "_dateEcheance": "2023-12-08T19:00:00.000Z",
-        "_description": "Embaler le jouet de Christine",
+        "_description": "Emballer le cadeau de Christine si possible",
         "_priorite": 2,
         "_etat": 1
+    },
+    {
+        "_intitule": "Débrancher le compteur de gaz",
+        "_dateCreation": "2023-12-22T13:44:12.582Z",
+        "_dateEcheance": "2024-12-08T19:00:00.000Z",
+        "_description": "Faire des économies d'énergie",
+        "_priorite": 3,
+        "_etat": 2
+    },
+    {
+        "_intitule": "Travailler sur mon énergie intérieure",
+        "_dateCreation": "2023-12-22T13:44:12.582Z",
+        "_dateEcheance": "2024-06-18T19:00:00.000Z",
+        "_description": "Revoir mes priorités et mes objectifs de vie",
+        "_priorite": 4,
+        "_etat": 1
+    },
+    {
+        "_intitule": "Ajuster les paramètres de mon compte Facebook",
+        "_dateCreation": "2023-12-22T13:44:12.582Z",
+        "_dateEcheance": "2024-11-30T19:00:00.000Z",
+        "_description": "Mettre à jour les paramètres de confidentialité",
+        "_priorite": 2,
+        "_etat": 0
+    },
+    {
+        "_intitule": "Bosser sur mon projet de fin d'études",
+        "_dateCreation": "2023-12-22T13:44:12.582Z",
+        "_dateEcheance": "2024-06-20T19:00:00.000Z",
+        "_description": "Finir le projet de fin d'études pour le 20 juin 2024",
+        "_priorite": 1,
+        "_etat": 1
+    },
+    {
+        "_intitule": "Travailler sur le déploiement de mon application web",
+        "_dateCreation": "2023-12-22T13:44:12.582Z",
+        "_dateEcheance": "2024-04-30T19:00:00.000Z",
+        "_description": "Déployer mon application web sur un serveur un jour",
+        "_priorite": 0,
+        "_etat": 0
     }
 ]

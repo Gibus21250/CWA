@@ -14,5 +14,45 @@
         "_description": "Recharger les consommables dans le cabinet de Paul",
         "_priorite": 2,
         "_etat": 1
+    },
+    {
+        "_intitule": "Acheter du bandage de type 3",
+        "_dateCreation": "2023-12-22T13:44:12.582Z",
+        "_dateEcheance": "2024-12-08T19:00:00.000Z",
+        "_description": "Restocker avant rupture de stock",
+        "_priorite": 3,
+        "_etat": 0
+    },
+    {
+        "_intitule": "Rembourser avec la mutuelle de monsieur Durand",
+        "_dateCreation": "2023-12-22T13:44:12.582Z",
+        "_dateEcheance": "2024-05-20T19:00:00.000Z",
+        "_description": "Envoyer les papiers à sa mutuelle et attendre le remboursement",
+        "_priorite": 1,
+        "_etat": 0
+    },
+    {
+        "_intitule": "Envoyer le devis de dentier à Mme Martin",
+        "_dateCreation": "2023-12-22T13:44:12.582Z",
+        "_dateEcheance": "2024-01-05T19:00:00.000Z",
+        "_description": "Réception des devis de dentier et envoi à la patiente",
+        "_priorite": 3,
+        "_etat": 1
+    },
+    {
+        "_intitule": "Réarranger le planning de la semaine prochaine",
+        "_dateCreation": "2023-12-22T13:44:12.582Z",
+        "_dateEcheance": "2023-12-24T19:00:00.000Z",
+        "_description": "Décaler tous les rendez-vous de la semaine prochaine à cause de l'absence de Paul",
+        "_priorite": 4,
+        "_etat": 2
+    },
+    {
+        "_intitule": "Modifier la salle d'attente",
+        "_dateCreation": "2023-12-22T13:44:12.582Z",
+        "_dateEcheance": "2025-12-08T19:00:00.000Z",
+        "_description": "Adapter pour les enfants et changer la chaise qui couine",
+        "_priorite": 0,
+        "_etat": 1
     }
 ]

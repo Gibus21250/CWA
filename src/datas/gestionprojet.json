@@ -13,6 +13,38 @@
         "_dateEcheance": "2023-12-08T19:00:00.000Z",
         "_description": "RDV Client de Dijon",
         "_priorite": 3,
+        "_etat": 0
+    },
+    {
+        "_intitule": "Mettre à jour l'intranet",
+        "_dateCreation": "2023-12-22T13:44:12.582Z",
+        "_dateEcheance": "2024-01-08T19:00:00.000Z",
+        "_description": "Revoir les principaux points de l'intranet",
+        "_priorite": 2,
         "_etat": 1
+    },
+    {
+        "_intitule": "Discuter de la prime de fin d'année",
+        "_dateCreation": "2023-12-22T13:44:12.582Z",
+        "_dateEcheance": "2023-12-29T19:00:00.000Z",
+        "_description": "RDV avec le DRH pour discuter de la prime de fin d'année",
+        "_priorite": 4,
+        "_etat": 2
+    },
+    {
+        "_intitule": "Invitations au repas annuel de l'entreprise",
+        "_dateCreation": "2023-12-22T13:44:12.582Z",
+        "_dateEcheance": "2024-09-01T19:00:00.000Z",
+        "_description": "Designer les invitations pour le repas annuel de l'entreprise",
+        "_priorite": 1,
+        "_etat": 0
+    },
+    {
+        "_intitule": "Réunion avec les actionnaires",
+        "_dateCreation": "2023-12-22T13:44:12.582Z",
+        "_dateEcheance": "2024-02-07T19:00:00.000Z",
+        "_description": "RDV avec les actionnaires pour discuter des résultats de l'année, préparer le discours",
+        "_priorite": 3,
+        "_etat": 2
     }
 ]

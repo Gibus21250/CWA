@@ -10,9 +10,49 @@
     {
         "_intitule": "Ménage",
         "_dateCreation": "2023-12-22T13:44:12.582Z",
-        "_dateEcheance": "2023-12-08T19:00:00.000Z",
-        "_description": "Laver Paul",
+        "_dateEcheance": "2024-04-08T19:00:00.000Z",
+        "_description": "Laver le sol et les vitres",
         "_priorite": 2,
         "_etat": 1
+    },
+    {
+        "_intitule": "Vider les poubelles",
+        "_dateCreation": "2023-12-22T13:44:12.582Z",
+        "_dateEcheance": "2023-12-28T19:00:00.000Z",
+        "_description": "Sortir au local poubelles et mettre des sacs neufs",
+        "_priorite": 3,
+        "_etat": 0
+    },
+    {
+        "_intitule": "Mettre du détergent dans les toilettes",
+        "_dateCreation": "2023-12-22T13:44:12.582Z",
+        "_dateEcheance": "2023-12-30T19:00:00.000Z",
+        "_description": "Laisser agir 10 minutes",
+        "_priorite": 1,
+        "_etat": 2
+    },
+    {
+        "_intitule": "Remplir le frigo et les placards",
+        "_dateCreation": "2023-12-22T13:44:12.582Z",
+        "_dateEcheance": "2024-12-01T19:00:00.000Z",
+        "_description": "Liste de courses : oeufs, lait, beurre, pain, fromage, jambon, tomates, salade, pommes, poires, bananes, kiwis, oranges, pâtes, riz, lentilles, haricots verts, carottes, courgettes, aubergines, poivrons, oignons, ail, huile d'olive, vinaigre balsamique, sel, poivre, épices, lessive, liquide vaisselle, éponges, papier toilette, sopalin, sacs poubelles, dentifrice, brosse à dents, savon, shampoing, gel douche, rasoirs, mousse à raser, coton-tiges, mouchoirs, médicaments, pansements, sparadrap, désinfectant, ciseaux, pince",
+        "_priorite": 0,
+        "_etat": 0
+    },
+    {
+        "_intitule": "Changer les draps",
+        "_dateCreation": "2023-12-22T13:44:12.582Z",
+        "_dateEcheance": "2024-02-14T19:00:00.000Z",
+        "_description": "Mettre les draps sales dans la machine à laver et les draps propres sur le lit",
+        "_priorite":4,
+        "_etat": 1
+    },
+    {
+        "_intitule": "Nettoyer la voiture",
+        "_dateCreation": "2023-12-22T13:44:12.582Z",
+        "_dateEcheance": "2024-10-14T19:00:00.000Z",
+        "_description": "Rajouter du lave-glace et de l'huile, passer l'aspirateur sur les sieges et enlever la poussière des tapis",
+        "_priorite": 1,
+        "_etat": 0
     }
 ]

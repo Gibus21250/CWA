@@ -3,7 +3,7 @@
         "_intitule": "Rapport projet",
         "_dateCreation": "2023-12-22T13:44:12.582Z",
         "_dateEcheance": "2023-12-23T23:00:00.000Z",
-        "_description": "Finir le rapport du projet de CWA",
+        "_description": "Faire le rapport du projet de Synthèse d'Images",
         "_priorite": 4,
         "_etat": 1
     },
@@ -14,5 +14,35 @@
         "_description": "Tout réviser",
         "_priorite": 2,
         "_etat": 2
+    },
+    {
+        "_intitule": "Faire TP Réseaux",
+        "_dateCreation": "2023-12-18T13:44:12.582Z",
+        "_dateEcheance": "2024-01-06T19:00:00.000Z",
+        "_description": "Reprendre la partie 4 et envoyer par mail le compte-rendu",
+        "_priorite": 3,
+        "_etat": 1
+    },
+    {
+        "_intitule": "Finir TD SGBD",
+        "_dateCreation": "2023-12-18T13:44:12.582Z",
+        "_dateEcheance": "2023-12-20T19:00:00.000Z",
+        "_description": "Partie 3 et 4, passage au tableau",
+        "_priorite": 2,
+        "_etat": 1
+    },{
+        "_intitule": "Partager le github du projet de SI",
+        "_dateCreation": "2023-12-18T13:44:12.582Z",
+        "_dateEcheance": "2024-01-12T19:00:00.000Z",
+        "_description": "Ajoutez les collègues au projet et partagez le lien",
+        "_priorite": 1,
+        "_etat": 0
+    },{
+        "_intitule": "Rendre le livre à la bibliothèque",
+        "_dateCreation": "2023-12-18T13:44:12.582Z",
+        "_dateEcheance": "2025-06-30T19:00:00.000Z",
+        "_description": "Déposer Operating System Concepts à la bibliothèque",
+        "_priorite": 1,
+        "_etat": 1
     }
 ]
