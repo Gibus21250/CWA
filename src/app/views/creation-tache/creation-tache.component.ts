@@ -46,13 +46,33 @@ export class CreationTacheComponent {
 
   verificateur() {
     //Vérifier que les champs ne sont pas vides
-    if (this.nomTache == '' || this.selectedDate == '' 
-    || this.description == '' 
-    || this.selectedPriority == -1 || this.selectedEtat == -1) {
+    if (this.nomTache == '' || this.description == '') {
+      alert("Veuillez vérifier les champs textuels");
       return false;
     }
-    const dateTmp = new Date(this.selectedDate);
-    return dateTmp > new Date();
+
+    if(this.selectedDate == '') {
+      alert("Veuillez selectionner une date.");
+      return false;
+    } else {
+      const dateTmp = new Date(this.selectedDate);
+      if(dateTmp < new Date()) {
+        alert("Veuillez entrer une date supérieur à la date et l'heure d'aujourd'hui.")
+        return false;
+      }
+    }
+
+    if(this.selectedPriority == -1) {
+      alert("Veuillez selectionner une prioritée.");
+      return false;
+    }
+
+    if(this.selectedEtat == -1) {
+      alert("Veuillez selectionner un etat.");
+      return false;
+    }
+    
+    return true;
   }
 
 }
