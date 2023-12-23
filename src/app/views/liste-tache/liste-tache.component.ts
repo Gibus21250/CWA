@@ -18,6 +18,7 @@ export class ListeTacheComponent implements OnInit {
   listeTache: Tache[] = [];
   listePrioSelected: boolean[] = [true, true, true, true, true];
   dateSelected: boolean = false;
+  prioritySelected: boolean = false;
 
   constructor(private tacheServ: TacheService,private router: Router) {
   }
@@ -35,7 +36,6 @@ export class ListeTacheComponent implements OnInit {
 
   private resetFiltre(): void {
     this.listePrioSelected = [true, true, true, true, true];
-    this.dateSelected = false;
     this.updateBoutonAffichage();
   }
 
@@ -146,7 +146,27 @@ export class ListeTacheComponent implements OnInit {
     else{
       this.dateSelected = true;
     }
+    
     this.tacheServ.onDateChange(this.dateSelected);
+    this.resetFiltre();
+  }
+
+  //Tri par priorité  
+  onPriorityOrder(): void {
+    if(this.prioritySelected){
+      this.prioritySelected = false;
+    }
+    else{
+      this.prioritySelected = true;
+    }
+    this.tacheServ.onTriChange(this.prioritySelected);
+  }
+
+  //Filtrer les tâches par statut
+  statutFilter(): void {
+    this.router.navigate(['/filtrePopup']);
+    this.resetFiltre();
+    this.updateBoutonAffichage();
   }
 
 }

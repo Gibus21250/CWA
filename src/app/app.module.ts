@@ -18,6 +18,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { FiltreStatutTacheComponent } from './views/filtre-statut-tache/filtre-statut-tache.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     ListeTacheComponent,
     TacheItemDirective,
     TacheItemComponent,
+    FiltreStatutTacheComponent,
   ],
   imports: [
     BrowserModule,

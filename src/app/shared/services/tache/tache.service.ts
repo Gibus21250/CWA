@@ -58,13 +58,41 @@ export class TacheService {
 
   onDateChange(dateSelected: boolean): void {
     //On trie directement sur la liste de tache visible
-    
+    this.lesTaches = [...this.tachesOrigin];
 
-    //trier les taches de la liste par date d'écheance la plus proche en premier
-    this.lesTaches.sort((a, b) => {
-      return a.dateEcheance.getTime() - b.dateEcheance.getTime();
-    });
+    if(dateSelected){
+      //trier les taches de la liste par date d'écheance la plus proche en premier
+      this.lesTaches.sort((a, b) => {
+        return a.dateEcheance.getTime() - b.dateEcheance.getTime();
+      });
+    }    
     
+    this.tachesSubject.next(this.lesTaches);
+  }
+
+  onTriChange(prioritySelected: boolean): void {
+    //On trie directement sur la liste de tache visible
+    this.lesTaches = [...this.tachesOrigin];
+
+    if(prioritySelected){
+      //trier les taches de la liste par priorité la plus élevée en premier
+      this.lesTaches.sort((a, b) => {
+        return b.priorite - a.priorite;
+      });
+    }    
+    
+    this.tachesSubject.next(this.lesTaches);
+  }
+
+  onStatutChange(statut: Etat): void {
+    //On a juste à filtrer directement sur la liste de tache visible
+    this.lesTaches = [...this.tachesOrigin];
+
+    this.lesTaches = this.tachesOrigin.filter(tache => {
+      return tache.etat === statut;
+      }
+    );
+
     this.tachesSubject.next(this.lesTaches);
   }
 
