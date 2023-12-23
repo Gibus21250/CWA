@@ -26,7 +26,6 @@ app.get('/datas/:theme', (req, res) => {
 
 //Sauvegarder
 app.post('/datas/:theme', (req, res) => {
-  console.log("POST reçu");
   const theme = req.params.theme;
   const filePath = path.join(__dirname, 'src', 'datas', `${theme}`);
 
