@@ -29,6 +29,7 @@
 .outside:hover {
     background-color: currentColor;
     border-radius: 7px;
+    cursor: pointer;
 }
 
 .echeance {
