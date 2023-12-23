@@ -34,6 +34,7 @@ export class TacheService {
   onThemeChange(theme: Theme) : void {
     this.activeTheme = theme;
     this.chargerDonnee();
+    this.selectedTacheSubject.next(null);
   }
 
   onPrioriteChange(p: Priorite[]): void {
