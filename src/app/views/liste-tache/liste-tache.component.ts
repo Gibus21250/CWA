@@ -25,7 +25,7 @@ export class ListeTacheComponent implements OnInit {
     //On abonne le component au service de la liste des tâches
     this.tacheServ.taches$.subscribe((taches: Tache[]) => {
       this.listeTache = taches;
-      this.resetFiltre();
+      this.updateBoutonAffichage();
     });
 
     //On charge le theme par default (Gestion perso)
@@ -132,5 +132,7 @@ export class ListeTacheComponent implements OnInit {
 
   showPopup() {
     this.router.navigate(['/creationPopup']);
+    this.resetFiltre();
+    this.updateBoutonAffichage();
   }
 }
