@@ -5,6 +5,7 @@ import { EtatInfos } from 'src/app/shared/enums/etat';
 import { PrioriteInfos } from 'src/app/shared/enums/priorite';
 import { DatePipe } from '@angular/common'
 import { Router } from '@angular/router';
+import { Etat } from 'src/app/shared/enums/etat';
 
 @Component({
   selector: 'app-details-tache',
@@ -47,6 +48,7 @@ export class DetailsTacheComponent implements AfterViewInit {
 
     })
   }
+
   ngAfterViewInit(): void {
     //Actualisation de la prgress barre
     const element = this.el.nativeElement.querySelector('.progressbar');
@@ -91,4 +93,19 @@ export class DetailsTacheComponent implements AfterViewInit {
       }
     }
   }
+
+  terminerTache(): void {
+    if(this.tache != null && this.tache != undefined) {
+      const originale = Object.assign({}, this.tache);
+      this.tache.etat = Etat.TERMINE;
+      this.tacheService.replaceTache(originale, this.tache);
+
+      this.tache = null; // Affectez null pour masquer la div
+    }
+    else {
+      alert("Erreur lors de la terminaison de la tâche");
+    }
+  }
+
+
 }

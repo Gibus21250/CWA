@@ -29,8 +29,33 @@
   margin-left: auto;
   margin-top: 20px;
 }
+
 .btnModif:hover {
   background-color: #59956490;
+}
+
+.btnTermine {
+  flex: 1;
+  cursor: pointer;
+  float: right;
+  border:none;
+  background-color: #5c376d00;
+}
+
+.btnTermine img {
+  position:inherit;
+  width: 100%;
+  height:100%;
+}
+
+.btnTermine :hover {
+  transition: transform 0.2s ease;
+  transform: scale(1.3);
+}
+
+.btnTermine :not(:hover) {
+  transition: transform 0.2s ease;
+  transform: scale(1);
 }
 
 .content_table{    
@@ -43,45 +68,43 @@
 
   }
 
+.content_table h1 {
+  text-align: center;
+  height: fit-content;
+}
 
-  .content_table h1{
-    text-align: center;
-    height: fit-content;
-  }
+.content_table div div {
+  display: flex;
+}
 
-  .content_table div div{
-    display :flex;
-  }
+.datecrea {
+  text-align: left;
+  width: auto;
+  flex: left;
+  float: left;
+}
 
-  .datecrea{
-    text-align: left;
-    width: auto;
-    flex:left;
-    float: left;
-  }
+.datefin {
+  text-align: right;
+  width: auto;
+  flex: 1;
+  float: right;
+}
 
-  .datefin{
-    text-align: right;
-    width: auto;
-    flex:1;
-    float: right;
-  }
+.maxprogressbar {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
+  /*border: solid rgba(255, 255, 255, 0.171);*/
+  border-radius: 10px;
+  border-width: 1px;
+  border-right-color: rgba(255, 255, 255, 0);
+}
 
-
-  .maxprogressbar{
-    background-image: linear-gradient(to right,rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.5));
-    /*border: solid rgba(255, 255, 255, 0.171);*/
-    border-radius: 10px;
-    border-width: 1px;
-    border-right-color: rgba(255, 255, 255, 0);
-  }
-
-  .progressbar{
-    background-color: rgba(98, 46, 240, 0.363);
-    width: 87%;
-    height:100%;
-    border-radius: 10px;
-  }
+.progressbar {
+  background-color: rgba(98, 46, 240, 0.363);
+  width: 87%;
+  height: 100%;
+  border-radius: 10px;
+}
 
 #dt-outside{
   height: 100%;
@@ -98,27 +121,3 @@
   font-size: 30px;
   overflow-y: needed ;
 }
-/*
-#dt-outside table{
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    height: 100%;
-    padding-left: 5%;
-    padding-right: 5%;
-}
-
-#dt-outside table tr th{
-    text-align: center;
-    height: auto;
-    margin-left:auto;
-    margin-right:auto;
-    font-size: 30px;
-}
-
-#dt-outside table tr td{
-    text-align: left;
-    height: auto;
-    padding-top: 50px;
-    font-size: 120%;
-}*/
