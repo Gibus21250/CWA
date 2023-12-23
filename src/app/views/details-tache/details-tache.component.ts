@@ -70,7 +70,6 @@ export class DetailsTacheComponent implements AfterViewInit {
         } else {
           this.renderer.setStyle(element, 'width', '100%');
         }
-
       }
     }
   }
