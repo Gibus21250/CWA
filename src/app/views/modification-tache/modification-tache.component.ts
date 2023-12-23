@@ -13,7 +13,7 @@ export class ModificationTacheComponent {
 
   constructor(private router: Router, private tacheServ: TacheService) {}
 
-  @Input() public _tache!: Tache;
+  ///@Input() public _tache!: Tache;
 
   nomTache: string = ''; // Nom de la tâche
   selectedDate: string = ''; //Pour la date
@@ -21,20 +21,13 @@ export class ModificationTacheComponent {
   selectedPriority: number = -1; // État initial pour la sélection de priorité
   selectedEtat: number = -1; // État initial pour la sélection d'état en radio bouton
 
-  ngOnInit(): void {
-    //Initialiser les valeurs des champs html avec les valeurs de la tâche
-    this.selectButton(this._tache.priorite);
-    this.selectEtat(this._tache.etat);
-  }
-
   //Valider la modification
   onSubmit() {
     if(this.verificateur()) {
       const resDate = new Date(this.selectedDate);
-      let tache = new Tache(this.nomTache, resDate, this._tache.dateCreation, this.descriptionTache, this.selectedPriority, this.selectedEtat);
-      
-      //sauvegarder la modif de tâche sur le serveur
+      //let tache = new Tache(this.nomTache, resDate, this._tache.dateCreation, this.descriptionTache, this.selectedPriority, this.selectedEtat);
       //this.tacheServ.addTache(tache);
+      //sauvegarder la modif de tâche sur le serveur
 
       this.router.navigate(['/']);
     }
@@ -48,6 +41,10 @@ export class ModificationTacheComponent {
   selectEtat(n: number): void {
     this.selectedEtat = n;
   }
+  // Fermer la popup
+  closePopup() {
+    this.router.navigate(['/']); 
+  }
 
   verificateur() {
     //Vérifier que les champs ne sont pas vides
@@ -58,11 +55,6 @@ export class ModificationTacheComponent {
     }
     const dateTmp = new Date(this.selectedDate);
     return dateTmp > new Date();
-  }
-
-  // Fermer la popup
-  closePopup() {
-    this.router.navigate(['/']); 
   }
 
 }
