@@ -82,13 +82,23 @@ export class ModificationTacheComponent implements OnInit {
   verificateur() {
     //Vérifier que les champs ne sont pas vides
     
-    if (this.modifiedTache.intitule == '' || this.modifiedTache.description == '' 
-    || this.strDate == '') {
+    //Vérifier que les champs ne sont pas vides
+    if (this.modifiedTache.intitule == '' || this.modifiedTache.description == '') {
+      alert("Veuillez vérifier les champs textuels");
       return false;
     }
 
-    const dateTmp = new Date(this.strDate);
-    return dateTmp > new Date();
+    if(this.strDate == '') {
+      alert("Veuillez selectionner une date.");
+      return false;
+    } else {
+      const dateTmp = new Date(this.strDate);
+      if(dateTmp < new Date()) {
+        alert("Veuillez entrer une date supérieur à la date et l'heure d'aujourd'hui.")
+        return false;
+      }
+    }
+    return true;
   }
 
 }

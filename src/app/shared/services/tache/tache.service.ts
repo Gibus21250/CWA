@@ -39,8 +39,7 @@ export class TacheService {
 
   onPrioriteChange(p: Priorite[]): void {
 
-    //On a juste à filtrer directement sur la liste de tache visible
-    this.lesTaches = this.tachesOrigin;
+    this.lesTaches = [...this.tachesOrigin];
 
     this.lesTaches = this.tachesOrigin.filter(tache => {
       let res: Boolean = false;
@@ -53,7 +52,7 @@ export class TacheService {
     );
 
     this.tachesSubject.next(this.lesTaches);
-
+    
   }
 
   onDateChange(dateSelected: boolean): void {

@@ -70,7 +70,6 @@ export class DetailsTacheComponent implements AfterViewInit {
         } else {
           this.renderer.setStyle(element, 'width', '100%');
         }
-
       }
     }
   }
@@ -84,9 +83,12 @@ export class DetailsTacheComponent implements AfterViewInit {
   }
 
   suppTache(): void {
-    if(this.tache != null && this.tache != undefined)
-      this.tacheService.suppTache(this.tache);
-    
-    this.tache = null; // Affectez null pour masquer la div
+    if(this.tache != null && this.tache != undefined) {
+      let res = window.prompt("Tapez CONFIRMER, pour supprimer cette tâche");
+      if(res === "CONFIRMER") {
+          this.tacheService.suppTache(this.tache);
+          this.tache = null; // Affectez null pour masquer la div
+      }
+    }
   }
 }
