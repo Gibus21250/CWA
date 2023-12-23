@@ -1,11 +1,11 @@
 export enum Etat {
-    EN_ATTENTE,
+    A_FAIRE,
     EN_COURS,
     TERMINE
 }
 
 export const EtatInfos: {[key in Etat]: string} = {
-    [Etat.EN_ATTENTE]: 'En attente',
+    [Etat.A_FAIRE]: 'À faire',
     [Etat.EN_COURS]: 'En cours',
     [Etat.TERMINE]: 'Terminée',
 };

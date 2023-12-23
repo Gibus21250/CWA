@@ -16,9 +16,10 @@ export class FiltreStatutTacheComponent {
   }
 
   onSubmit() {
+    console.log(this.selectedEtat);
     if(this.verificateur()) {
       this.tacheServ.onStatutChange(this.selectedEtat);
-      this.router.navigate(['/']);
+      this.closePopup();
     }
   }
 
@@ -36,6 +37,7 @@ export class FiltreStatutTacheComponent {
     //Vérifier que les champs ne sont pas vides
     if ( this.selectedEtat == -1) {
       return false;
+      alert("Veuillez sélectionner un état.");
     }
     return true;
   }

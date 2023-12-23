@@ -1,1 +1,36 @@
-<p>filtre-statut-tache works!</p>
+<div id="container">
+    <div class="popup-container">
+      <!-- Contenu de votre popup -->
+      <form (ngSubmit)="onSubmit()">
+      
+        <h1>Filtrer par état :</h1>
+      
+        <label for="etat">État :</label>
+        <div>
+          <input id="etat0" type="radio" name="retat" [class.selected]="selectedEtat === 0" (click)="selectEtat(0)" />
+          <label for="etat0">À faire</label>
+        </div>
+
+        <div>
+          <input id="etat1" type="radio" name="retat" [class.selected]="selectedEtat === 1" (click)="selectEtat(1)" />
+          <label for="etat1">En cours</label>
+        </div>
+
+        <div>
+          <input id="etat2" type="radio" name="retat" [class.selected]="selectedEtat === 2" (click)="selectEtat(2)" />
+          <label for="etat2">Terminé</label>
+        </div>
+
+        <div>
+            <input id="etat3" type="radio" name="retat" [class.selected]="selectedEtat === 3" (click)="selectEtat(3)" />
+            <label for="etat3">Tout</label>
+        </div>
+
+        <div class="popup-buttons">
+            <button class="btnPopA" (click)="closePopup()">Annuler</button>
+            <button type="submit" class="btnPopV">Valider</button>
+        </div>
+
+    </form>
+  </div>
+</div>

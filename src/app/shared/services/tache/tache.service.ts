@@ -84,16 +84,31 @@ export class TacheService {
     this.tachesSubject.next(this.lesTaches);
   }
 
-  onStatutChange(statut: Etat): void {
+  onStatutChange(statut: number): void {
     //On a juste à filtrer directement sur la liste de tache visible
     this.lesTaches = [...this.tachesOrigin];
-
-    this.lesTaches = this.tachesOrigin.filter(tache => {
-      return tache.etat === statut;
+    
+    if(statut == 3){
+      this.tachesSubject.next(this.lesTaches);
+    }
+    else{
+      switch(statut){
+        case 0:
+          statut = Etat.A_FAIRE;
+          break;
+        case 1:
+          statut = Etat.EN_COURS;
+          break;
+        case 2:
+          statut = Etat.TERMINE;
+          break;
       }
-    );
-
-    this.tachesSubject.next(this.lesTaches);
+      this.lesTaches = this.tachesOrigin.filter(tache => {
+        return tache.etat === statut;
+        }
+      );
+      this.tachesSubject.next(this.lesTaches);
+    }
   }
 
   onSelectTache(tache: Tache) : void {

@@ -166,7 +166,6 @@ export class ListeTacheComponent implements OnInit {
   statutFilter(): void {
     this.router.navigate(['/filtrePopup']);
     this.resetFiltre();
-    this.updateBoutonAffichage();
   }
 
 }
