@@ -1,6 +1,6 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormControl } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { Tache } from 'src/app/shared/models/tache';
 import { TacheService } from 'src/app/shared/services/tache/tache.service';
 
@@ -9,37 +9,70 @@ import { TacheService } from 'src/app/shared/services/tache/tache.service';
   templateUrl: './modification-tache.component.html',
   styleUrls: ['./modification-tache.component.css']
 })
-export class ModificationTacheComponent {
+export class ModificationTacheComponent implements OnInit {
 
-  constructor(private router: Router, private tacheServ: TacheService) {}
+  private originalTache: Tache = new Tache('', new Date(), new Date(), '', 0, 0);
+  modifiedTache: Tache = new Tache('', new Date(), new Date(), '', 0, 0);
 
-  ///@Input() public _tache!: Tache;
+  strDate: string = '';
 
-  nomTache: string = ''; // Nom de la tâche
-  selectedDate: string = ''; //Pour la date
-  descriptionTache: string = ''; // Description de la tâche
-  selectedPriority: number = -1; // État initial pour la sélection de priorité
-  selectedEtat: number = -1; // État initial pour la sélection d'état en radio bouton
+  constructor(private router: Router, private tacheServ: TacheService) {    
+  }
+
+  ngOnInit(): void {
+
+    //On récupère la tache passé par le componant Details
+    this.originalTache = new Tache(
+      history.state.laTache._intitule,
+      history.state.laTache._dateCreation,
+      history.state.laTache._dateEcheance,
+      history.state.laTache._description,
+      history.state.laTache._priorite,
+      history.state.laTache._etat
+    );
+
+    this.modifiedTache = new Tache(
+      history.state.laTache._intitule,
+      history.state.laTache._dateCreation,
+      history.state.laTache._dateEcheance,
+      history.state.laTache._description,
+      history.state.laTache._priorite,
+      history.state.laTache._etat
+    );
+
+    this.strDate = this.formatDateForInput(history.state.laTache._dateEcheance);
+    
+  }
+
+  formatDateForInput(date: Date): string {
+    // Obtenir le format YYYY-MM-DDTHH:mm
+    const year = date.getFullYear();
+    const month = ('0' + (date.getMonth() + 1)).slice(-2);
+    const day = ('0' + date.getDate()).slice(-2);
+    const hours = ('0' + date.getHours()).slice(-2);
+    const minutes = ('0' + date.getMinutes()).slice(-2);
+  
+    return `${year}-${month}-${day}T${hours}:${minutes}`;
+  }
+
 
   //Valider la modification
   onSubmit() {
     if(this.verificateur()) {
-      const resDate = new Date(this.selectedDate);
-      //let tache = new Tache(this.nomTache, resDate, this._tache.dateCreation, this.descriptionTache, this.selectedPriority, this.selectedEtat);
-      //this.tacheServ.addTache(tache);
-      //sauvegarder la modif de tâche sur le serveur
-
+      const resDate = new Date(this.strDate);
+      this.modifiedTache.dateEcheance = resDate;
+      this.tacheServ.replaceTache(this.originalTache, this.modifiedTache);
       this.router.navigate(['/']);
     }
   }
 
   selectButton(n: number) {
-    this.selectedPriority = n;
+    this.modifiedTache.priorite = n;
   }
 
   // Etats
   selectEtat(n: number): void {
-    this.selectedEtat = n;
+    this.modifiedTache.etat = n;
   }
   // Fermer la popup
   closePopup() {
@@ -48,12 +81,13 @@ export class ModificationTacheComponent {
 
   verificateur() {
     //Vérifier que les champs ne sont pas vides
-    if (this.nomTache == '' || this.selectedDate == '' 
-    || this.descriptionTache == '' 
-    || this.selectedPriority == -1 || this.selectedEtat == -1) {
+    
+    if (this.modifiedTache.intitule == '' || this.modifiedTache.description == '' 
+    || this.strDate == '') {
       return false;
     }
-    const dateTmp = new Date(this.selectedDate);
+
+    const dateTmp = new Date(this.strDate);
     return dateTmp > new Date();
   }
 
