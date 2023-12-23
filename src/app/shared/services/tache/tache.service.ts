@@ -56,6 +56,18 @@ export class TacheService {
 
   }
 
+  onDateChange(dateSelected: boolean): void {
+    //On trie directement sur la liste de tache visible
+    
+
+    //trier les taches de la liste par date d'écheance la plus proche en premier
+    this.lesTaches.sort((a, b) => {
+      return a.dateEcheance.getTime() - b.dateEcheance.getTime();
+    });
+    
+    this.tachesSubject.next(this.lesTaches);
+  }
+
   onSelectTache(tache: Tache) : void {
     //On emet à tous les abonné la tache selectionnée (doit être capturé par le component Detail-Tache)
     this.selectedTacheSubject.next(tache);

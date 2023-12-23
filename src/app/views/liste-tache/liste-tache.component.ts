@@ -17,6 +17,7 @@ export class ListeTacheComponent implements OnInit {
 
   listeTache: Tache[] = [];
   listePrioSelected: boolean[] = [true, true, true, true, true];
+  dateSelected: boolean = false;
 
   constructor(private tacheServ: TacheService,private router: Router) {
   }
@@ -34,6 +35,7 @@ export class ListeTacheComponent implements OnInit {
 
   private resetFiltre(): void {
     this.listePrioSelected = [true, true, true, true, true];
+    this.dateSelected = false;
     this.updateBoutonAffichage();
   }
 
@@ -129,9 +131,22 @@ export class ListeTacheComponent implements OnInit {
     this.tacheServ.onSelectTache(tache);
   }
 
+  //Routage vers la page de création de tâche
   showPopup() {
     this.router.navigate(['/creationPopup']);
     this.resetFiltre();
     this.updateBoutonAffichage();
   }
+
+  //Tri par date d'écheance
+  onDateOrder(): void {
+    if(this.dateSelected){
+      this.dateSelected = false;
+    }
+    else{
+      this.dateSelected = true;
+    }
+    this.tacheServ.onDateChange(this.dateSelected);
+  }
+
 }

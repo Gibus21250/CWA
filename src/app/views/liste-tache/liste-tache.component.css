@@ -118,8 +118,8 @@
 
 .btnFilter img {
     position:inherit;
-    width: 50%;
-    height:50%;
+    width: 100%;
+    height:100%;
 }
 
 .btnFilter :hover {
@@ -130,4 +130,15 @@
 .btnFilter :not(:hover) {
     transition: transform 0.2s ease;
     transform: scale(1);
+}
+
+.btnFiltres {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.btnFiltres button {
+    display: inline-block;
+    cursor: pointer;
 }
