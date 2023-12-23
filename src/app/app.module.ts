@@ -4,7 +4,7 @@ import { CommonModule, DatePipe } from "@angular/common";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AccueilComponent } from './accueil/accueil.component';
+import { AccueilComponent } from './views/accueil/accueil.component';
 import { CreationTacheComponent } from './views/creation-tache/creation-tache.component';
 import { DetailsTacheComponent } from './views/details-tache/details-tache.component';
 import { ModificationTacheComponent } from './views/modification-tache/modification-tache.component';
