@@ -35,7 +35,7 @@ export class FiltreTacheComponent {
     switch (theme) {
       case 0:
         monElement = doc.getElementById('background') as  HTMLImageElement;
-        monElement.src = "assets/images/personnelleF.jpg";
+        monElement.src = "assets/images/personnelle2F.jpg";
         break;
       case 1:
         monElement = doc.getElementById('background') as  HTMLImageElement;
@@ -55,7 +55,7 @@ export class FiltreTacheComponent {
         break;
       case 5:
         monElement = doc.getElementById('background') as  HTMLImageElement;
-        monElement.src = "assets/images/organisationF.jpg";
+        monElement.src = "assets/images/organisation2F.jpg";
         break;
       case 6:
         monElement = doc.getElementById('background') as  HTMLImageElement;
