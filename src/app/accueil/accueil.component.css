@@ -43,6 +43,8 @@ body {
 
 /*Horloge*/
 #date {
+  flex:1;
+  float: center;
   margin-top: 20px;
   text-align: center;
   font-size: 1em;
@@ -107,4 +109,12 @@ body {
   text-align: justify;
   overflow:hidden;
   
+}
+
+#rubrique{
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 30px;
+  flex:1;
+  float: left;
 }

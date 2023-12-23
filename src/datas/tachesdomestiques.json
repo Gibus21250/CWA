@@ -1,18 +1,1 @@
-[
-    {
-        "_intitule": "Vaisselle",
-        "_dateCreation": "2023-12-22T13:44:12.582Z",
-        "_dateEcheance": "2023-12-23T23:00:00.000Z",
-        "_description": "Tout laver",
-        "_priorite": 2,
-        "_etat": 1
-    },
-    {
-        "_intitule": "Ménage",
-        "_dateCreation": "2023-12-22T13:44:12.582Z",
-        "_dateEcheance": "2023-12-08T19:00:00.000Z",
-        "_description": "Laver Paul",
-        "_priorite": 2,
-        "_etat": 1
-    }
-]
+[{"_intitule":"Vaisselle","_dateCreation":"2023-12-23T23:00:00.000Z","_dateEcheance":"2023-12-23T23:00:00.000Z","_description":"Tout laver","_priorite":2,"_etat":1},{"_intitule":"Ménage","_dateCreation":"2023-12-22T13:44:12.582Z","_dateEcheance":"2023-12-08T19:00:00.000Z","_description":"Laver Paul","_priorite":2,"_etat":2}]

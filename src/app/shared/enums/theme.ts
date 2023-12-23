@@ -9,7 +9,7 @@ export enum Theme {
 }
 
 export const ThemeInfos: {[key in Theme]: string} = {
-    [Theme.GESTIONPERSO]: 'Gestion personelle',
+    [Theme.GESTIONPERSO]: 'Gestion personnelle',
     [Theme.PRO]: 'Travail professionnel',
     [Theme.ETUDES]: 'Éducation et études',
     [Theme.GESTIONPROJET]: 'Gestion de projet',
