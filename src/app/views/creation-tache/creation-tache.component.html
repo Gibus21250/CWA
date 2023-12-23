@@ -6,13 +6,14 @@
     <form (ngSubmit)="onSubmit()">
 
       <label for="nom">Nom : </label>
-      <input class="inputNom" type="text" id="nom" name="nom" [(ngModel)]="nomTache" required>
+      <input class="inputNom" type="text" id="nom" name="nom" [(ngModel)]="nomTache" required/>
 
-      <br>
+      <br/>
 
+      <div>
       <label for="dateEcheance">Date d'échéance :</label>
-      <input type="datetime-local" id="dateEcheance" name="dateEcheance" min="2018-01-01" [(ngModel)]="selectedDate"
-        required />
+      <input type="datetime-local" id="dateEcheance" name="dateEcheance" min="2018-01-01" [(ngModel)]="selectedDate"required />
+      </div>
 
       <br>
 
