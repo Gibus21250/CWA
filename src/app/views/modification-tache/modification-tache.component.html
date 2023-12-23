@@ -5,44 +5,44 @@
     <form (ngSubmit)="onSubmit()">
       
       <label for="nom">Nom : </label>
-      <input class="inputNom" type="text" id="nom" name="nom" [(ngModel)]="nomTache" required>
+      <input class="inputNom" type="text" id="nom" name="nom" [(ngModel)]="modifiedTache.intitule" required>
 
       <br>
 
       <label for="dateEcheance">Date d'échéance :</label>
-      <input type="datetime-local" id="dateEcheance" name="dateEcheance" min="2018-01-01" [(ngModel)]="selectedDate" required/>
+      <input type="datetime-local" id="dateEcheance" name="dateEcheance" min="2018-01-01" [(ngModel)]="strDate" required/>
 
       <br>
 
       <label for="descriptionTache">Description :</label>
-      <textarea type="textarea" id="descriptionTache" name="descriptionTache" class="textarea" placeholder="Description" [(ngModel)]="descriptionTache" required></textarea>
+      <textarea type="textarea" id="descriptionTache" name="descriptionTache" class="textarea" placeholder="Description" [(ngModel)]="modifiedTache.description" required></textarea>
 
       <br>
 
       <label for="priorite">Priorité :</label>
       <div class="btnRond">
-        <input type="button" class="btnVert" [class.selected]="selectedPriority === 0" (click)="selectButton(0)" />
-        <input type="button" class="btnBlanc" [class.selected]="selectedPriority === 1" (click)="selectButton(1)" />
-        <input type="button" class="btnJaune" [class.selected]="selectedPriority === 2" (click)="selectButton(2)" />
-        <input type="button" class="btnRouge" [class.selected]="selectedPriority === 3" (click)="selectButton(3)" />
-        <input type="button" class="btnViolet" [class.selected]="selectedPriority === 4" (click)="selectButton(4)" />
+        <input type="button" class="btnVert" [class.selected]="modifiedTache.priorite === 0" (click)="selectButton(0)" />
+        <input type="button" class="btnBlanc" [class.selected]="modifiedTache.priorite === 1" (click)="selectButton(1)" />
+        <input type="button" class="btnJaune" [class.selected]="modifiedTache.priorite === 2" (click)="selectButton(2)" />
+        <input type="button" class="btnRouge" [class.selected]="modifiedTache.priorite === 3" (click)="selectButton(3)" />
+        <input type="button" class="btnViolet" [class.selected]="modifiedTache.priorite === 4" (click)="selectButton(4)" />
       </div>
 
       <br>
 
       <label for="etat">État :</label>
       <div>
-        <input id="etat0" type="radio" name="retat" [class.selected]="selectedEtat === 0" (click)="selectEtat(0)"/>
+        <input id="etat0" type="radio" name="retat" [checked]="modifiedTache.etat === 0" (click)="selectEtat(0)"/>
         <label for="etat0">À faire</label>
       </div>
 
       <div>
-        <input id="etat1" type="radio" name="retat" [class.selected]="selectedEtat === 1" (click)="selectEtat(1)"/>
+        <input id="etat1" type="radio" name="retat" [checked]="modifiedTache.etat" (click)="selectEtat(1)"/>
         <label for="etat1">En cours</label>
       </div>
 
       <div>
-        <input id="etat2" type="radio" name="retat" [class.selected]="selectedEtat === 2" (click)="selectEtat(2)"/>
+        <input id="etat2" type="radio" name="retat" [checked]="modifiedTache.etat" (click)="selectEtat(2)"/>
         <label for="etat2">Terminé</label>
       </div>
       
