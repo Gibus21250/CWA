@@ -32,34 +32,37 @@ export class FiltreTacheComponent {
 
     const doc = document;
     let monElement:  HTMLImageElement | null = null;
+    let monElement2:  HTMLElement;
+    monElement = doc.getElementById('background') as  HTMLImageElement;
+    monElement2 = doc.getElementById('rubrique') as  HTMLElement;
     switch (theme) {
       case 0:
-        monElement = doc.getElementById('background') as  HTMLImageElement;
         monElement.src = "assets/images/personnelle2F.jpg";
+        monElement2.innerHTML = "Gestion personnelle";
         break;
       case 1:
-        monElement = doc.getElementById('background') as  HTMLImageElement;
         monElement.src = "assets/images/travailF.jpg";
+        monElement2.innerHTML = "Travail professionnel";
         break;
       case 2:
-        monElement = doc.getElementById('background') as  HTMLImageElement;
         monElement.src = "assets/images/etudeF.jpg";
+        monElement2.innerHTML = "Éducation et études";
         break;
       case 3:
-        monElement = doc.getElementById('background') as  HTMLImageElement;
         monElement.src = "assets/images/gestionF.jpg";
+        monElement2.innerHTML = "Gestion de projet";
         break;
       case 4:
-        monElement = doc.getElementById('background') as  HTMLImageElement;
         monElement.src = "assets/images/santeF.jpg";
+        monElement2.innerHTML = "Santé et bien-être";
         break;
       case 5:
-        monElement = doc.getElementById('background') as  HTMLImageElement;
         monElement.src = "assets/images/organisation2F.jpg";
+        monElement2.innerHTML = "Organisation des évènements";
         break;
       case 6:
-        monElement = doc.getElementById('background') as  HTMLImageElement;
         monElement.src = "assets/images/domestiqueF.jpg";
+        monElement2.innerHTML = "Gestion des tâches domestiques";
         break;
     }
 

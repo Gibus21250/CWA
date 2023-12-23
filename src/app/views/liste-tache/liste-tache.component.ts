@@ -140,11 +140,17 @@ export class ListeTacheComponent implements OnInit {
 
   //Tri par date d'écheance
   onDateOrder(): void {
+    const doc = document;
+    let monElement: HTMLElement;
+    monElement = doc.getElementById('btnsablier') as HTMLElement;
+
     if(this.dateSelected){
       this.dateSelected = false;
+      monElement.style.filter="grayscale(90%)";
     }
     else{
       this.dateSelected = true;
+      monElement.style.filter="grayscale(0%)";
     }
     
     this.tacheServ.onDateChange(this.dateSelected);
@@ -153,11 +159,16 @@ export class ListeTacheComponent implements OnInit {
 
   //Tri par priorité  
   onPriorityOrder(): void {
+    const doc = document;
+    let monElement: HTMLElement;
+    monElement = doc.getElementById('btnmedaille') as HTMLElement;
     if(this.prioritySelected){
       this.prioritySelected = false;
+      monElement.style.filter="grayscale(90%)";
     }
     else{
       this.prioritySelected = true;
+      monElement.style.filter="grayscale(0%)";
     }
     this.tacheServ.onTriChange(this.prioritySelected);
   }
